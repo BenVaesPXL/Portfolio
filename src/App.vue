@@ -1,7 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center">
-    <h1 class="text-4xl font-bold text-white">Hello World!</h1>
-  </div>
+  <h1 class="text-3xl font-bold underline text-center">Hello world!</h1>
 </template>
 
 <script setup>
