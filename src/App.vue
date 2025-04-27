@@ -1,9 +1,19 @@
 <template>
-  <h1 class="text-3xl font-bold underline text-center">Hello world!</h1>
+  <NavComponent />
+  <router-view></router-view>
+  <FooterComponent />
 </template>
 
-<script setup>
-// Empty for now
+<script>
+import NavComponent from "./components/NavComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
+export default {
+  name: "App",
+  components: {
+    NavComponent,
+    FooterComponent,
+  },
+};
 </script>
 
 <style scoped>
