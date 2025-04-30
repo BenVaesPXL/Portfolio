@@ -41,30 +41,26 @@
             </div>
           </div>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 768"
+          <img
+            src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
+            alt="Portfolio Image"
             class="mx-auto hidden max-w-md text-gray-900 md:block dark:text-white"
-          >
-            <g fill="none" fill-rule="evenodd">
-              <g fill="#FF5678">
-                <!-- Removed long path here -->
-              </g>
-              <g fill="currentColor">
-                <path />
-                <path />
-              </g>
-            </g>
-          </svg>
+          />
         </div>
       </section>
+      <!--skill section-->
+      <SkillsComponent />
     </main>
   </div>
 </template>
 
 <script>
+import SkillsComponent from "../components/SkillSComponent.vue";
 export default {
   name: "HomeView",
+  components: {
+    SkillsComponent,
+  },
   data() {
     return {
       title: "Welcome to My Portfolio",
