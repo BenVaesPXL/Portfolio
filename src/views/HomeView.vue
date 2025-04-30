@@ -25,18 +25,18 @@
             </p>
 
             <div class="mt-4 flex gap-4 sm:mt-6">
-              <router-link
+              <a
                 class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-                to="/about"
+                href="#projects-preview"
               >
-                About Me
-              </router-link>
+                View my work
+              </a>
 
               <router-link
-                class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
                 to="/contact"
+                class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
               >
-                Contact
+                Contact Me
               </router-link>
             </div>
           </div>
@@ -51,7 +51,7 @@
       <!--skill section-->
       <SkillsComponent />
       <!-- Project preview section-->
-      <section class="projects-preview py-20 px-20">
+      <section class="projects-preview py-20 px-20" id="projects-preview">
         <h2 class="text-center text-4xl font-bold mb-8">Featured Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <ProjectCard
@@ -80,25 +80,26 @@ export default {
   },
   data() {
     return {
-      title: "Welcome to My Portfolio",
-      description: "Hi, I am Ben Vaes, a frontend developer...",
+      title: "Hi, I'm Ben Vaes – Crafting Seamless Frontend Experiences",
+      description:
+        "Passionate about building intuitive, responsive, and visually stunning web applications. Let's bring your ideas to life.",
       projects: [
         {
-          title: "Project Name 1",
+          title: "Paddock Gear",
           description:
             "Short description of the project goes here. What it does, what tech you used, etc.",
           image: "",
           link: "/projects/project-1",
         },
         {
-          title: "Project Name 2",
+          title: "Etaalent",
           description:
             "Short description of the project goes here. What it does, what tech you used, etc.",
           image: "",
           link: "/projects/project-2",
         },
         {
-          title: "Project Name 3",
+          title: "Portfolio WPL1",
           description:
             "Short description of the project goes here. What it does, what tech you used, etc.",
           image: "",
