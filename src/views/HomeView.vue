@@ -50,21 +50,61 @@
       </section>
       <!--skill section-->
       <SkillsComponent />
+      <!-- Project preview section-->
+      <section class="projects-preview py-20 px-20">
+        <h2 class="text-center text-4xl font-bold mb-8">Featured Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <ProjectCard
+            v-for="(project, index) in projects"
+            :key="index"
+            :title="project.title"
+            :description="project.description"
+            :image="project.image"
+            :link="project.link"
+          />
+        </div>
+      </section>
     </main>
   </div>
 </template>
 
 <script>
 import SkillsComponent from "../components/SkillSComponent.vue";
+import ProjectCard from "../components/ProjectCard.vue";
+
 export default {
   name: "HomeView",
   components: {
     SkillsComponent,
+    ProjectCard,
   },
   data() {
     return {
       title: "Welcome to My Portfolio",
       description: "Hi, I am Ben Vaes, a frontend developer...",
+      projects: [
+        {
+          title: "Project Name 1",
+          description:
+            "Short description of the project goes here. What it does, what tech you used, etc.",
+          image: "",
+          link: "/projects/project-1",
+        },
+        {
+          title: "Project Name 2",
+          description:
+            "Short description of the project goes here. What it does, what tech you used, etc.",
+          image: "",
+          link: "/projects/project-2",
+        },
+        {
+          title: "Project Name 3",
+          description:
+            "Short description of the project goes here. What it does, what tech you used, etc.",
+          image: "",
+          link: "/projects/project-3",
+        },
+      ],
     };
   },
 };
