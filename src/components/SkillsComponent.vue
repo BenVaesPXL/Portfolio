@@ -1,10 +1,12 @@
 <template>
   <section
-    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-12 px-4"
+    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-6 w-full"
   >
-    <div class="max-w-5xl mx-auto text-center">
+    <div
+      class="max-w-full mx-auto text-center px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24"
+    >
       <h2
-        class="text-3xl font-bold mb-8 border-b border-gray-200 dark:border-gray-700 pb-4"
+        class="text-3xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-3"
       >
         My Tech Stack
       </h2>

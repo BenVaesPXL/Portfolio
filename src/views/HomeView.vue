@@ -4,12 +4,12 @@
     class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
   >
     <!-- Main Content -->
-    <main class="py-10">
+    <main class="">
       <section
-        class="bg-white dark:bg-gray-900 lg:grid lg:h-screen lg:place-content-center"
+        class="bg-white dark:bg-gray-900 lg:grid lg:items-center lg:h-screen w-full"
       >
         <div
-          class="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
+          class="mx-auto w-full px-4 py-8 sm:px-6 sm:py-12 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-12 xl:px-16 2xl:px-24"
         >
           <div class="max-w-prose text-left">
             <h1
@@ -44,15 +44,17 @@
           <img
             src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
             alt="Portfolio Image"
-            class="mx-auto hidden max-w-md md:block"
+            class="mx-auto hidden max-w-md md:block lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
           />
         </div>
       </section>
       <!--skill section-->
-      <SkillsComponent />
+      <div class="mt-0 three-xl:px-32">
+        <SkillsComponent />
+      </div>
       <!-- Project preview section-->
       <section
-        class="projects-preview py-20 px-20 bg-white dark:bg-gray-900"
+        class="projects-preview py-20 px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 bg-white dark:bg-gray-900 w-full"
         id="projects-preview"
       >
         <h2
@@ -82,8 +84,17 @@
   </div>
 </template>
 
+<style>
+@media (min-width: 1600px) {
+  .three-xl\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+</style>
+
 <script>
-import SkillsComponent from "../components/SkillSComponent.vue";
+import SkillsComponent from "../components/SkillsComponent.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 
 import paddockGearImage from "@/assets/images/paddockGear.png";
@@ -96,21 +107,21 @@ export default {
   },
   data() {
     return {
-      title: "Hi, I'm Ben Vaes – Crafting Seamless Frontend Experiences",
+      title: "Hi, I'm Ben Vaes Crafting Seamless Frontend Experiences",
       description:
         "Passionate about building intuitive, responsive, and visually stunning web applications. Let's bring your ideas to life.",
       projects: [
         {
           title: "Paddock Gear",
           description:
-            "Paddock Gear is a motorsport-themed webshop built with Vue.js, SCSS and Bootstrap, showcasing responsive design, product filtering, and a functional shopping cart.",
+            "Paddock Gear is a motorsport-themed webshop built with Vue.js, SCSS and Bootstrap.",
           image: paddockGearImage,
           link: "/projects/project-1",
         },
         {
           title: "Etaalent",
           description:
-            "Short description of the project goes here. What it does, what tech you used, etc.",
+            "Etaalent is a large-scale team project built for a cross-disciplinary course. I was responsible for the frontend, used Vue.js, SCSS and Bootstrap.",
           image: "",
           link: "/projects/project-2",
         },

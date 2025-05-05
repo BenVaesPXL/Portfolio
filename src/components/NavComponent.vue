@@ -1,6 +1,6 @@
 <template>
-  <header class="bg-white dark:bg-gray-900">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+  <header class="bg-white dark:bg-gray-900 w-full">
+    <div class="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24">
       <div class="flex h-16 items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-12">
           <router-link class="block text-gray-900 dark:text-white" to="/">
@@ -43,5 +43,10 @@ export default {
 </script>
 
 <style scoped>
-/* Add any custom styles here if needed */
+@media (min-width: 1600px) {
+  .\\33xl\\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
 </style>
