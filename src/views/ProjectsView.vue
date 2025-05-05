@@ -25,14 +25,14 @@
           >
             {{ project.projectdetails }}
           </p>
-
+          <!-- Links may not work because github is not public fix later -->
           <a
-            :href="project.link"
+            :href="project.githubLink"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
           >
-            Visit Project
+            View on GitHub
           </a>
         </div>
       </div>
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import paddockGearImage from "@/assets/images/paddockGear.png";
+
 export default {
   name: "ProjectsView",
   data() {
@@ -55,11 +57,12 @@ export default {
         id: "project-1",
         title: "Paddock Gear",
         description:
-          "Short description of the project goes here. What it does, what tech you used, etc.",
+          "Paddock Gear is a motorsport-themed webshop built with Vue.js, SCSS and Bootstrap, showcasing responsive design, product filtering, and a functional shopping cart.",
         projectdetails:
-          "Detailed description of the project goes here. What it does, what tech you used, etc.",
-        image: "",
-        link: "/projects/project-1",
+          "Paddock Gear is a fully responsive, motorsport-inspired webshop developed for a school project. The project is built with Vue.js (Options API) for the frontend and styled using custom SCSS and Bootstrap. The goal of this project was to learn the basics of Vue.js and to create a webshop that is not only functional but also visually appealing. Paddock Gear reflects both my technical skills and personal interest in motorsports.",
+        image: paddockGearImage,
+        githubLink:
+          "https://github.com/PXL-1DVO-WebAdvanced-2425/individuele-opdracht-deel-2-BenVaesPXL",
       },
       {
         id: "project-2",
