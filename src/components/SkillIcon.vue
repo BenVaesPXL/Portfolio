@@ -6,7 +6,7 @@
       class="w-10 h-10 grayscale group-hover:grayscale-0 transition"
     />
     <div
-      class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition bg-gray-800 text-xs text-white py-1 px-2 rounded shadow-lg z-10 whitespace-nowrap"
+      class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition bg-white dark:bg-gray-800 text-xs text-gray-900 dark:text-white py-1 px-2 rounded shadow-lg z-10 whitespace-nowrap"
     >
       {{ tooltip }}
     </div>

@@ -1,12 +1,12 @@
 <!-- src/views/HomeView.vue -->
 <template>
   <div
-    class="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
+    class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
   >
     <!-- Main Content -->
     <main class="py-10">
       <section
-        class="bg-white lg:grid lg:h-screen lg:place-content-center dark:bg-gray-900"
+        class="bg-white dark:bg-gray-900 lg:grid lg:h-screen lg:place-content-center"
       >
         <div
           class="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
@@ -44,15 +44,22 @@
           <img
             src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
             alt="Portfolio Image"
-            class="mx-auto hidden max-w-md text-gray-900 md:block dark:text-white"
+            class="mx-auto hidden max-w-md md:block"
           />
         </div>
       </section>
       <!--skill section-->
       <SkillsComponent />
       <!-- Project preview section-->
-      <section class="projects-preview py-20 px-20" id="projects-preview">
-        <h2 class="text-center text-4xl font-bold mb-8">Featured Projects</h2>
+      <section
+        class="projects-preview py-20 px-20 bg-white dark:bg-gray-900"
+        id="projects-preview"
+      >
+        <h2
+          class="text-center text-4xl font-bold mb-8 text-gray-900 dark:text-white"
+        >
+          Featured Projects
+        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <ProjectCard
             v-for="(project, index) in projects"
