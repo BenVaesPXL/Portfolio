@@ -79,6 +79,8 @@
 import SkillsComponent from "../components/SkillSComponent.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 
+import paddockGearImage from "@/assets/images/paddockGear.png";
+
 export default {
   name: "HomeView",
   components: {
@@ -94,8 +96,8 @@ export default {
         {
           title: "Paddock Gear",
           description:
-            "Short description of the project goes here. What it does, what tech you used, etc.",
-          image: "",
+            "Paddock Gear is a motorsport-themed webshop built with Vue.js, SCSS and Bootstrap, showcasing responsive design, product filtering, and a functional shopping cart.",
+          image: paddockGearImage,
           link: "/projects/project-1",
         },
         {
