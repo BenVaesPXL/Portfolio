@@ -98,6 +98,7 @@ import SkillsComponent from "../components/SkillsComponent.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 
 import paddockGearImage from "@/assets/images/paddockGear.png";
+import etaalentImage from "@/assets/images/etaalent.png";
 
 export default {
   name: "HomeView",
@@ -122,7 +123,7 @@ export default {
           title: "Etaalent",
           description:
             "Etaalent is a large-scale team project built for a cross-disciplinary course. I was responsible for the frontend, used Vue.js, SCSS and Bootstrap.",
-          image: "",
+          image: etaalentImage,
           link: "/projects/project-2",
         },
         {

@@ -42,6 +42,7 @@
 
 <script>
 import paddockGearImage from "@/assets/images/paddockGear.png";
+import EtaalentImage from "@/assets/images/etaalent.png";
 
 export default {
   name: "ProjectsView",
@@ -71,7 +72,7 @@ export default {
           "eTaalent is a large-scale team project built for a cross-disciplinary course. I was responsible for the frontend, using Vue.js, SCSS and Bootstrap to deliver a responsive and dynamic user experience.",
         projectdetails:
           "Etaalent project for a client developed during the WPL2 course, designed to simulate real-world collaboration between frontend developers, backend developers, and designers. As the sole frontend developer on the team, I was responsible for translating Figma designs into a responsive and dynamic user interface using Vue.js (Options API), Bootstrap, and SCSS. The project involved close collaboration with other disciplines, version control with Git, and frequent coordination through standups and planning sessions. eTaalent challenged me to manage a larger codebase, integrate backend APIs, and build scalable, reusable components — giving me hands-on experience with teamwork, communication, and full project delivery.",
-        image: "",
+        image: EtaalentImage,
         githubLink: "https://github.com/PXL-WPL2-2425/wpl2-frontend-team-01",
       },
       {
