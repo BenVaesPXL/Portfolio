@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 
 // Import project images
-import paddockGearImage from "@/assets/images/paddockGear.png?url";
-import etaalentImage from "@/assets/images/etaalent.png?url";
+import paddockGearImage from "@/assets/images/paddockGear.png";
+import etaalentImage from "@/assets/images/etaalent.png";
 
 export const useProjectsStore = defineStore("projects", {
   state: () => ({
