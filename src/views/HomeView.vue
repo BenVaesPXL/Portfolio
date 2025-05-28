@@ -131,7 +131,7 @@
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid"
           >
             <ProjectCard
-              v-for="(project, index) in projects"
+              v-for="(project, index) in projectsData"
               :key="index"
               :title="project.title"
               :description="project.description"
@@ -277,9 +277,8 @@
 <script>
 import SkillsComponent from "../components/SkillsComponent.vue";
 import ProjectCard from "../components/ProjectCard.vue";
-
-import paddockGearImage from "@/assets/images/paddockGear.png";
-import etaalentImage from "@/assets/images/etaalent.png";
+import { useProjectsStore } from "@/stores/projects.js";
+import { mapState } from "pinia";
 
 export default {
   name: "HomeView",
@@ -287,33 +286,15 @@ export default {
     SkillsComponent,
     ProjectCard,
   },
+  computed: {
+    ...mapState(useProjectsStore, {
+      projectsData: "featuredProjects",
+    }),
+  },
   data() {
     return {
       description:
         "Passionate about building intuitive, responsive, and visually stunning web applications. Let's bring your ideas to life with modern Vue.js and cutting-edge technologies.",
-      projects: [
-        {
-          title: "Paddock Gear",
-          description:
-            "A motorsport-themed e-commerce platform built with Vue.js, featuring responsive design and modern UI components.",
-          image: paddockGearImage,
-          link: "/projects/project-1",
-        },
-        {
-          title: "Etaalent",
-          description:
-            "Large-scale team project for cross-disciplinary course. Responsible for frontend development using Vue.js, SCSS, and Bootstrap.",
-          image: etaalentImage,
-          link: "/projects/project-2",
-        },
-        {
-          title: "Portfolio WPL1",
-          description:
-            "My first portfolio website showcasing early projects and development journey, built with fundamental web technologies.",
-          image: "",
-          link: "/projects/project-3",
-        },
-      ],
       observer: null,
       animatedElements: new Set(),
     };

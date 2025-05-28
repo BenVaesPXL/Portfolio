@@ -5,7 +5,7 @@
     <!-- Image Container -->
     <div class="relative overflow-hidden">
       <div
-        v-if="!image"
+        v-if="!image || image === '' || image === null"
         class="w-full h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center"
       >
         <svg
@@ -93,7 +93,7 @@ export default {
     image: {
       type: String,
       required: false,
-      default: "",
+      default: null,
     },
     link: {
       type: String,

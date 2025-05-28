@@ -3,37 +3,122 @@
     class="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
   >
     <section class="py-16 px-6 sm:px-8 max-w-6xl mx-auto">
+      <!-- All Projects Grid -->
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          {{ project.title }}
+          All Projects
         </h1>
         <p class="text-lg text-gray-700 dark:text-gray-300">
-          {{ project.description }}
+          Explore my complete portfolio of web development projects
         </p>
       </div>
 
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <img
-          :src="project.image"
-          alt="Project Image"
-          class="rounded-lg shadow-md w-full md:w-1/2 h-auto object-cover border border-gray-200 dark:border-gray-700"
-        />
+      <!-- Project Categories Filter -->
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button
+          @click="selectedCategory = 'all'"
+          :class="[
+            'px-4 py-2 rounded-lg font-medium transition-colors',
+            selectedCategory === 'all'
+              ? 'bg-indigo-600 text-white'
+              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
+          ]"
+        >
+          All Projects
+        </button>
+        <button
+          v-for="category in categories"
+          :key="category"
+          @click="selectedCategory = category"
+          :class="[
+            'px-4 py-2 rounded-lg font-medium transition-colors',
+            selectedCategory === category
+              ? 'bg-indigo-600 text-white'
+              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
+          ]"
+        >
+          {{ category }}
+        </button>
+      </div>
 
-        <div class="flex-1">
-          <p
-            class="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
-          >
-            {{ project.projectdetails }}
-          </p>
-          <!-- Links may not work because github is not public fix later -->
-          <a
-            :href="project.githubLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-          >
-            View on GitHub
-          </a>
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ProjectCard
+          v-for="project in filteredProjects"
+          :key="project.id"
+          :title="project.title"
+          :description="project.description"
+          :image="project.image"
+          :link="project.link"
+          class="project-card"
+        >
+          <div class="flex flex-col gap-2">
+            <!-- Technologies -->
+            <div class="flex flex-wrap gap-1">
+              <span
+                v-for="tech in project.technologies.slice(0, 3)"
+                :key="tech"
+                class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 px-2 py-1 rounded"
+              >
+                {{ tech }}
+              </span>
+              <span
+                v-if="project.technologies.length > 3"
+                class="text-xs text-gray-500 dark:text-gray-400"
+              >
+                +{{ project.technologies.length - 3 }} more
+              </span>
+            </div>
+
+            <!-- Action Button -->
+            <router-link
+              :to="project.link"
+              class="inline-flex items-center justify-center rounded-lg border-2 border-indigo-600 px-4 py-2 font-medium text-indigo-600 dark:text-indigo-400 transition-all duration-300 hover:bg-indigo-600 hover:text-white dark:hover:text-white group"
+            >
+              <span>View Details</span>
+              <svg
+                class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </router-link>
+          </div>
+        </ProjectCard>
+      </div>
+
+      <!-- Project Stats -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
+        >
+          <div class="text-3xl font-bold text-indigo-600 mb-2">
+            {{ projectCount }}
+          </div>
+          <div class="text-gray-600 dark:text-gray-400">Total Projects</div>
+        </div>
+        <div
+          class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
+        >
+          <div class="text-3xl font-bold text-indigo-600 mb-2">
+            {{ technologies.length }}
+          </div>
+          <div class="text-gray-600 dark:text-gray-400">Technologies Used</div>
+        </div>
+        <div
+          class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
+        >
+          <div class="text-3xl font-bold text-indigo-600 mb-2">
+            {{ categories.length }}
+          </div>
+          <div class="text-gray-600 dark:text-gray-400">Project Categories</div>
         </div>
       </div>
     </section>
@@ -41,52 +126,43 @@
 </template>
 
 <script>
-import paddockGearImage from "@/assets/images/paddockGear.png";
-import EtaalentImage from "@/assets/images/etaalent.png";
+import ProjectCard from "@/components/ProjectCard.vue";
+import { useProjectsStore } from "@/stores/projects.js";
+import { mapState, mapGetters } from "pinia";
 
 export default {
   name: "ProjectsView",
+  components: {
+    ProjectCard,
+  },
   data() {
     return {
-      project: {},
+      selectedCategory: "all",
     };
   },
-  created() {
-    const projectId = this.$route.params.id;
-    const projects = [
-      {
-        id: "project-1",
-        title: "Paddock Gear",
-        description:
-          "Paddock Gear is a motorsport-themed webshop built with Vue.js, SCSS and Bootstrap, showcasing responsive design, product filtering, and a functional shopping cart.",
-        projectdetails:
-          "Paddock Gear is a fully responsive, motorsport-inspired webshop developed for a school project. The project is built with Vue.js (Options API) for the frontend and styled using custom SCSS and Bootstrap. The goal of this project was to learn the basics of Vue.js and to create a webshop that is not only functional but also visually appealing. Paddock Gear reflects both my technical skills and personal interest in motorsports.",
-        image: paddockGearImage,
-        githubLink:
-          "https://github.com/PXL-1DVO-WebAdvanced-2425/individuele-opdracht-deel-2-BenVaesPXL",
-      },
-      {
-        id: "project-2",
-        title: "Etaalent",
-        description:
-          "eTaalent is a large-scale team project built for a cross-disciplinary course. I was responsible for the frontend, using Vue.js, SCSS and Bootstrap to deliver a responsive and dynamic user experience.",
-        projectdetails:
-          "Etaalent project for a client developed during the WPL2 course, designed to simulate real-world collaboration between frontend developers, backend developers, and designers. As the sole frontend developer on the team, I was responsible for translating Figma designs into a responsive and dynamic user interface using Vue.js (Options API), Bootstrap, and SCSS. The project involved close collaboration with other disciplines, version control with Git, and frequent coordination through standups and planning sessions. eTaalent challenged me to manage a larger codebase, integrate backend APIs, and build scalable, reusable components — giving me hands-on experience with teamwork, communication, and full project delivery.",
-        image: EtaalentImage,
-        githubLink: "https://github.com/PXL-WPL2-2425/wpl2-frontend-team-01",
-      },
-      {
-        id: "project-3",
-        title: "Portfolio WPL1",
-        description:
-          "Short description of the project goes here. What it does, what tech you used, etc.",
-        projectdetails:
-          "Detailed description of the project goes here. What it does, what tech you used, etc.",
-        image: "",
-        link: "/projects/project-3",
-      },
-    ];
-    this.project = projects.find((project) => project.id === projectId) || {};
+  computed: {
+    ...mapState(useProjectsStore, {
+      allProjects: "projects",
+    }),
+    ...mapGetters(useProjectsStore, [
+      "allCategories",
+      "allTechnologies",
+      "projectCount",
+    ]),
+    categories() {
+      return this.allCategories;
+    },
+    technologies() {
+      return this.allTechnologies;
+    },
+    filteredProjects() {
+      if (this.selectedCategory === "all") {
+        return this.allProjects;
+      }
+      return this.allProjects.filter(
+        (project) => project.category === this.selectedCategory
+      );
+    },
   },
 };
 </script>
