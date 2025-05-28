@@ -19,12 +19,12 @@
           icon="
             https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg
           "
-          tooltip="Used in all my projects"
+          tooltip="Used most in my projects"
         />
         <SkillIcon
           name="JavaScript"
           icon="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-          tooltip="4+ years of use"
+          tooltip="Used in frontend and backend"
         />
         <SkillIcon
           name="Tailwind CSS"
@@ -36,17 +36,17 @@
         <SkillIcon
           name="SCSS"
           icon="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
-          tooltip="Styled with Bootstrap & SCSS"
+          tooltip="Bootstrap & SCSS"
         />
         <SkillIcon
           name="HTML5"
           icon="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-          tooltip="Semantic & accessible markup"
+          tooltip="Semantic HTML"
         />
         <SkillIcon
           name="GitHub"
           icon="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-          tooltip="Version control and hosting"
+          tooltip="Version control"
         />
       </div>
     </div>
