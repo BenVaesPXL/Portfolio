@@ -162,8 +162,8 @@ export const useWpl1Store = defineStore("wpl1", {
           },
         ],
         downloadLink: {
-          url: "#",
-          text: "Download Dashboard Project Report PDF",
+          url: "/images/Dashboard screenshot.png",
+          text: "View Dashboard Screenshot",
         },
       },
     ],
@@ -206,24 +206,10 @@ export const useWpl1Store = defineStore("wpl1", {
     downloadLinks: [
       {
         id: 1,
-        text: "POP Sessions Reflection PDF",
-        url: "#",
-        buttonColor: "bg-indigo-600 hover:bg-indigo-700",
-        primary: true,
-      },
-      {
-        id: 2,
         text: "Complete WPL1 Reflection",
-        url: "#",
+        url: "/documents/EindReflectieWPL1BenVaes.pdf",
         buttonColor: "bg-purple-600 hover:bg-purple-700",
-        primary: false,
-      },
-      {
-        id: 3,
-        text: "All Assignment Files",
-        url: "#",
-        buttonColor: "bg-gray-600 hover:bg-gray-700",
-        primary: false,
+        primary: true,
       },
     ],
   }),
