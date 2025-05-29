@@ -14,32 +14,11 @@
       </div>
 
       <!-- Project Categories Filter -->
-      <div class="flex flex-wrap justify-center gap-4 mb-8">
-        <button
-          @click="selectedCategory = 'all'"
-          :class="[
-            'px-4 py-2 rounded-lg font-medium transition-colors',
-            selectedCategory === 'all'
-              ? 'bg-indigo-600 text-white'
-              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
-          ]"
-        >
-          All Projects
-        </button>
-        <button
-          v-for="category in categories"
-          :key="category"
-          @click="selectedCategory = category"
-          :class="[
-            'px-4 py-2 rounded-lg font-medium transition-colors',
-            selectedCategory === category
-              ? 'bg-indigo-600 text-white'
-              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
-          ]"
-        >
-          {{ category }}
-        </button>
-      </div>
+      <CategoryFilter
+        v-model="selectedCategory"
+        :categories="categories"
+        all-categories-label="All Projects"
+      />
 
       <!-- Projects Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -127,6 +106,7 @@
 
 <script>
 import ProjectCard from "@/components/ProjectCard.vue";
+import CategoryFilter from "@/components/CategoryFilter.vue";
 import { useProjectsStore } from "@/stores/projects.js";
 import { mapState, mapGetters } from "pinia";
 
@@ -134,6 +114,7 @@ export default {
   name: "ProjectsView",
   components: {
     ProjectCard,
+    CategoryFilter,
   },
   data() {
     return {
