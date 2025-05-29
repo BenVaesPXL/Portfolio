@@ -157,8 +157,7 @@
                 Etaalent is a multidisciplinary project designed to simulate a
                 real-world work environment. My primary role was as the
                 front-end developer, where I collaborated closely with team
-                members from various backgrounds to deliver a functional and
-                user-friendly website
+                members from various backgrounds.
               </p>
 
               <div class="flex flex-wrap gap-2 mb-6">
