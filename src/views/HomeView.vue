@@ -85,7 +85,7 @@
             </div>
 
             <!-- Hero Image -->
-            <div class="flex justify-center lg:justify-end">
+            <div class="hidden sm:flex justify-center lg:justify-end">
               <img
                 src="../assets/images/profilepic.png"
                 alt="Ben Vaes"

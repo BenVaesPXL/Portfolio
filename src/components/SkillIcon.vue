@@ -13,10 +13,22 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  name: String,
-  icon: String,
-  tooltip: String,
-});
+<script>
+export default {
+  name: "SkillIcon",
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    icon: {
+      type: String,
+      required: true,
+    },
+    tooltip: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>

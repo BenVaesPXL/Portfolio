@@ -146,17 +146,27 @@
       <div
         class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 footer-bottom"
       >
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="text-gray-600 dark:text-gray-400 text-sm">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <!-- Copyright -->
+          <div
+            class="text-gray-600 dark:text-gray-400 text-sm order-2 lg:order-1"
+          >
             &copy; {{ currentYear }} Ben Vaes. All rights reserved.
           </div>
-          <div class="flex items-center space-x-6 mt-4 md:mt-0">
+
+          <!-- Right Side Content -->
+          <div
+            class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 order-1 lg:order-2"
+          >
+            <!-- Back to Top Button -->
             <button
               @click="scrollToTop"
-              class="inline-flex items-center space-x-1 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 text-sm"
+              class="inline-flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-white hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-all duration-300 text-sm font-medium border border-gray-300 dark:border-gray-600 hover:border-indigo-600 dark:hover:border-indigo-500 group"
             >
               <svg
-                class="w-4 h-4"
+                class="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -170,27 +180,35 @@
               </svg>
               <span>Back to Top</span>
             </button>
-            <span class="text-gray-600 dark:text-gray-400 text-sm">
-              Built with Vue.js & Tailwind CSS
-            </span>
-            <div class="flex items-center space-x-1">
-              <span class="text-gray-600 dark:text-gray-400 text-sm"
-                >Made with</span
+
+            <!-- Tech Stack and Made with Love -->
+            <div
+              class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left"
+            >
+              <span
+                class="text-gray-500 dark:text-gray-400 text-xs font-medium"
               >
-              <svg
-                class="w-4 h-4 text-red-500 heart-pulse"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <span class="text-gray-600 dark:text-gray-400 text-sm"
-                >in Belgium</span
-              >
+                Built with Vue.js & Tailwind CSS
+              </span>
+              <div class="flex items-center space-x-1">
+                <span class="text-gray-500 dark:text-gray-400 text-xs"
+                  >Made with</span
+                >
+                <svg
+                  class="w-3 h-3 text-red-500 heart-pulse"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-gray-500 dark:text-gray-400 text-xs"
+                  >in Belgium</span
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -317,16 +335,26 @@ footer .dark .router-link-active {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-  }
 }
 
-/* Back to top button hover effect */
+/* Back to top button enhanced styling */
 button:hover svg {
   transform: translateY(-2px);
   transition: transform 0.2s ease;
+}
+
+/* Improved responsive layout for footer bottom */
+@media (max-width: 640px) {
+  .footer-bottom .flex {
+    text-align: center;
+  }
+
+  .footer-bottom .order-1 {
+    order: 1;
+  }
+
+  .footer-bottom .order-2 {
+    order: 2;
+  }
 }
 </style>

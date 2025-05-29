@@ -37,7 +37,8 @@
 
           <!-- Mobile menu button -->
           <button
-            @click="toggleMobileMenu"
+            type="button"
+            @click.stop.prevent="toggleMobileMenu"
             class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             aria-label="Toggle mobile menu"
           >
@@ -84,6 +85,7 @@
       >
         <div
           v-if="isMobileMenuOpen"
+          @click.stop
           class="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
         >
           <nav class="px-4 py-4 space-y-2">
@@ -137,6 +139,7 @@ export default {
       this.isMobileMenuOpen = false;
     },
     handleClickOutside(event) {
+      // Only close if clicking outside the entire header element
       if (!this.$el.contains(event.target)) {
         this.isMobileMenuOpen = false;
       }
@@ -153,10 +156,5 @@ export default {
 </script>
 
 <style scoped>
-@media (min-width: 1600px) {
-  .\\33xl\\:px-32 {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-}
+/* Responsive navigation styles handled by Tailwind classes */
 </style>

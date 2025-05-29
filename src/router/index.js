@@ -20,6 +20,16 @@ const router = createRouter({
     { path: "/wpl2", component: Wpl2View },
     { path: "/:notFound(.*)", component: NotFoundView },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top when navigating to a new route
+    if (savedPosition) {
+      // If there's a saved position (like when using browser back/forward), use it
+      return savedPosition;
+    } else {
+      // Otherwise, scroll to top
+      return { top: 0, behavior: "smooth" };
+    }
+  },
 });
 
 export default router;

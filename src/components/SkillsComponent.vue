@@ -47,6 +47,13 @@
   </section>
 </template>
 
-<script setup>
+<script>
 import SkillIcon from "./SkillIcon.vue";
+
+export default {
+  name: "SkillsComponent",
+  components: {
+    SkillIcon,
+  },
+};
 </script>

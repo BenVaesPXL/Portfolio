@@ -312,14 +312,14 @@ export default {
 
 /* Custom ultrawide screen support */
 @media (min-width: 1600px) {
-  :deep(.3xl\:px-32) {
+  .\\33xl\\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
   }
 }
 
 @media (min-width: 1920px) {
-  :deep(.4xl\:px-48) {
+  .\\34xl\\:px-48 {
     padding-left: 12rem;
     padding-right: 12rem;
   }

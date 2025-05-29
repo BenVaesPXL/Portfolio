@@ -214,14 +214,5 @@ export default {
 </script>
 
 <style scoped>
-@media (min-width: 1600px) {
-  .\\33xl\\:px-32 {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-  .\\34xl\\:px-48 {
-    padding-left: 12rem;
-    padding-right: 12rem;
-  }
-}
+/* Responsive styles handled by Tailwind classes */
 </style>
