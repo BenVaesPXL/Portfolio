@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useWpl1Store = defineStore("wpl1", {
   state: () => ({
     courseInfo: {
-      title: "WPL1: Workplace Learning 1",
+      title: "WPL1",
       subtitle: "Introduction to the Job Market & Professional Development",
       duration: "1 Semester",
       credits: "6 ECTS",
