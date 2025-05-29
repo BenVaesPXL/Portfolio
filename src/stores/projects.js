@@ -40,7 +40,7 @@ export const useProjectsStore = defineStore("projects", {
         id: 3,
         title: "Portfolio WPL1",
         description:
-          "My first portfolio website showcasing early projects and development journey, built with fundamental web technologies.",
+          "My first portfolio website showcasing early projects, built with fundamental web technologies.",
         image: portfolioWPL1Image,
         technologies: ["HTML", "CSS", "JavaScript", "Web Fundamentals"],
         link: "/projects/3",

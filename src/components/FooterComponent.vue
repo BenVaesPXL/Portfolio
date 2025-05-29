@@ -20,7 +20,7 @@
           <div class="flex space-x-4">
             <!-- Social Links -->
             <a
-              href="https://github.com/benvaes"
+              href="https://github.com/BenVaesPXL"
               target="_blank"
               rel="noopener noreferrer"
               class="social-link text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 w-10 h-10 rounded-full flex items-center justify-center"
@@ -33,7 +33,7 @@
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/benvaes"
+              href="https://www.linkedin.com/in/ben-vaes-192821357"
               target="_blank"
               rel="noopener noreferrer"
               class="social-link text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 w-10 h-10 rounded-full flex items-center justify-center"
