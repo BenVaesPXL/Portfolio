@@ -346,11 +346,10 @@
       >
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-            Documentation & Resources
+            Reflection
           </h2>
           <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Access the complete documentation, source code, and reflection
-            materials for the WPL2 case study.
+            Access my reflection of the WPL2 case study.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
