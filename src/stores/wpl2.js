@@ -5,12 +5,6 @@ export const useWpl2Store = defineStore("wpl2", {
     courseInfo: {
       title: "WPL2: Case Etaalent",
       subtitle: "Large-scale team project.",
-      duration: "1 Semester",
-      credits: "6 ECTS",
-      grade: "In Progress",
-      year: "2024",
-      description:
-        "WPL2 focuses on advanced web development techniques using modern JavaScript frameworks, with emphasis on Vue.js ecosystem, component architecture, and professional development practices.",
     },
 
     technologies: ["Vue.js", "Bootstrap", "Pinia"],
@@ -96,9 +90,6 @@ export const useWpl2Store = defineStore("wpl2", {
       },
     },
 
-    reflectionText:
-      "WPL2 provided valuable experience with modern web development using Vue.js. The project enhanced my understanding of component architecture, state management, and responsive design while developing professional development skills.",
-
     downloadLinks: [
       {
         id: 3,
@@ -109,26 +100,4 @@ export const useWpl2Store = defineStore("wpl2", {
       },
     ],
   }),
-
-  getters: {
-    // Get primary download link
-    getPrimaryDownloadLink: (state) => {
-      return state.downloadLinks.find((link) => link.primary);
-    },
-
-    // Get all technologies used
-    getAllTechnologies: (state) => {
-      return state.technologies;
-    },
-  },
-
-  actions: {
-    // Update download link URL
-    updateDownloadLink(linkId, newUrl) {
-      const link = this.downloadLinks.find((l) => l.id === linkId);
-      if (link) {
-        link.url = newUrl;
-      }
-    },
-  },
 });

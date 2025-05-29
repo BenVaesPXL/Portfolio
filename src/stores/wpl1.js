@@ -168,38 +168,6 @@ export const useWpl1Store = defineStore("wpl1", {
       },
     ],
 
-    learningOutcomes: [
-      {
-        id: 1,
-        title: "Professional Communication",
-        description:
-          "Developed effective communication skills for professional environments, including presentation skills and collaborative work.",
-        iconPath:
-          "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-        bgColor: "bg-indigo-100 dark:bg-indigo-900",
-        iconColor: "text-indigo-600 dark:text-indigo-400",
-      },
-      {
-        id: 2,
-        title: "Time & Project Management",
-        description:
-          "Mastered essential time management techniques and project planning skills crucial for professional success.",
-        iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-        bgColor: "bg-green-100 dark:bg-green-900",
-        iconColor: "text-green-600 dark:text-green-400",
-      },
-      {
-        id: 3,
-        title: "Self-Reflection & Growth",
-        description:
-          "Cultivated self-awareness and continuous learning mindset essential for personal and professional development.",
-        iconPath:
-          "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-        bgColor: "bg-purple-100 dark:bg-purple-900",
-        iconColor: "text-purple-600 dark:text-purple-400",
-      },
-    ],
-
     reflectionText:
       "WPL1 (Werkplekleren 1) was a transformative introduction to the professional world. This course helped me develop essential workplace skills including time management, team leadership, and professional communication. Through self-reflection exercises and real-world projects, I gained valuable insights into my strengths and areas for improvement, setting a solid foundation for my continued professional development.",
 
@@ -213,54 +181,4 @@ export const useWpl1Store = defineStore("wpl1", {
       },
     ],
   }),
-
-  getters: {
-    // Get assignment by ID
-    getAssignmentById: (state) => (id) => {
-      return state.assignments.find((assignment) => assignment.id === id);
-    },
-
-    // Get assignments with download links only
-    getAssignmentsWithDownloads: (state) => {
-      return state.assignments.filter((assignment) => assignment.downloadLink);
-    },
-
-    // Get all skill names from assignments
-    getAllSkills: (state) => {
-      const skills = new Set();
-      state.assignments.forEach((assignment) => {
-        assignment.skills.forEach((skill) => skills.add(skill.name));
-      });
-      return Array.from(skills);
-    },
-
-    // Get primary download link
-    getPrimaryDownloadLink: (state) => {
-      return state.downloadLinks.find((link) => link.primary);
-    },
-  },
-
-  actions: {
-    // Update assignment download link
-    updateAssignmentDownloadLink(assignmentId, newUrl) {
-      const assignment = this.getAssignmentById(assignmentId);
-      if (assignment && assignment.downloadLink) {
-        assignment.downloadLink.url = newUrl;
-      }
-    },
-
-    // Update download link URL
-    updateDownloadLink(linkId, newUrl) {
-      const link = this.downloadLinks.find((l) => l.id === linkId);
-      if (link) {
-        link.url = newUrl;
-      }
-    },
-
-    // Add new assignment
-    addAssignment(assignment) {
-      const newId = Math.max(...this.assignments.map((a) => a.id)) + 1;
-      this.assignments.push({ ...assignment, id: newId });
-    },
-  },
 });

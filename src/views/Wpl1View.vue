@@ -139,6 +139,8 @@
               v-for="link in downloadLinks"
               :key="link.id"
               :href="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
               :class="`inline-flex items-center px-6 py-3 ${link.buttonColor} text-white font-medium rounded-lg transition-colors`"
             >
               <svg
