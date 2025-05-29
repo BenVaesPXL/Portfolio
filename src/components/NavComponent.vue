@@ -35,42 +35,6 @@
             </ul>
           </nav>
 
-          <!-- Dark Mode Toggle (for future implementation) -->
-          <button
-            @click="toggleDarkMode"
-            class="hidden md:flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            <svg
-              v-if="!isDarkMode"
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              ></path>
-            </svg>
-            <svg
-              v-else
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              ></path>
-            </svg>
-          </button>
-
           <!-- Mobile menu button -->
           <button
             @click="toggleMobileMenu"
@@ -136,42 +100,6 @@
             >
               {{ navItem.name }}
             </router-link>
-
-            <!-- Mobile Dark Mode Toggle -->
-            <button
-              @click="toggleDarkMode"
-              class="w-full flex items-center px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <svg
-                v-if="!isDarkMode"
-                class="w-5 h-5 mr-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                ></path>
-              </svg>
-              <svg
-                v-else
-                class="w-5 h-5 mr-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                ></path>
-              </svg>
-              {{ isDarkMode ? "Light Mode" : "Dark Mode" }}
-            </button>
           </nav>
         </div>
       </transition>
@@ -186,17 +114,15 @@ export default {
       navItems: [
         { name: "About", path: "/about" },
         { name: "Projects", path: "/projects" },
+        { name: "WPL1", path: "/wpl1" },
         { name: "WPL2 Case", path: "/wpl2" },
         { name: "Contact", path: "/contact" },
       ],
       title: "Ben Vaes",
       isMobileMenuOpen: false,
-      isDarkMode: false,
     };
   },
   mounted() {
-    // Initialize dark mode based on system preference or localStorage
-    this.initDarkMode();
     // Close mobile menu when clicking outside
     document.addEventListener("click", this.handleClickOutside);
   },
@@ -214,16 +140,6 @@ export default {
       if (!this.$el.contains(event.target)) {
         this.isMobileMenuOpen = false;
       }
-    },
-    toggleDarkMode() {
-      this.isDarkMode = !this.isDarkMode;
-      // Here you would implement actual dark mode toggle
-      // For now, we'll just update the state
-      // In a real implementation, you'd want to use a global state management solution
-    },
-    initDarkMode() {
-      // Check if dark mode is enabled (you can implement this based on your dark mode setup)
-      this.isDarkMode = document.documentElement.classList.contains("dark");
     },
     isActiveRoute(path) {
       return (

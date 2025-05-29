@@ -19,7 +19,7 @@ export const useProjectsStore = defineStore("projects", {
           "Tailwind CSS",
           "Responsive Design",
         ],
-        link: "/projects/project-1",
+        link: "/projects/1",
         githubUrl: "", // Add if available
         liveUrl: "", // Add if available
         featured: true,
@@ -37,7 +37,7 @@ export const useProjectsStore = defineStore("projects", {
           "Large-scale team project for cross-disciplinary course. Responsible for frontend development using Vue.js, SCSS, and Bootstrap.",
         image: etaalentImage,
         technologies: ["Vue.js", "SCSS", "Bootstrap", "Team Collaboration"],
-        link: "/projects/project-2",
+        link: "/projects/2",
         githubUrl: "", // Add if available
         liveUrl: "", // Add if available
         featured: true,
@@ -55,7 +55,7 @@ export const useProjectsStore = defineStore("projects", {
           "My first portfolio website showcasing early projects and development journey, built with fundamental web technologies.",
         image: null,
         technologies: ["HTML", "CSS", "JavaScript", "Web Fundamentals"],
-        link: "/projects/project-3",
+        link: "/projects/3",
         githubUrl: "", // Add if available
         liveUrl: "", // Add if available
         featured: true,

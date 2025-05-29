@@ -1,149 +1,191 @@
-<!-- src/views/HomeView.vue -->
 <template>
-  <div
-    class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
-  >
-    <!-- Main Content -->
+  <div class="min-h-screen bg-white dark:bg-gray-900">
     <main>
       <!-- Hero Section -->
       <section
-        class="bg-white dark:bg-gray-900 lg:grid lg:items-center min-h-screen w-full"
+        class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-800 dark:via-gray-900 dark:to-gray-800"
       >
         <div
-          class="mx-auto w-full px-4 py-16 sm:px-6 sm:py-20 md:grid md:grid-cols-2 md:items-center md:gap-8 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
-        >
-          <div class="max-w-prose text-left space-y-6 hero-content">
-            <!-- Main Title -->
-            <h1
-              class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl dark:text-white leading-tight"
-            >
-              Hi, I'm <span class="text-indigo-600">Ben Vaes</span>
-            </h1>
+          class="absolute inset-0 opacity-50"
+          style="
+            background-image: url('data:image/svg+xml;utf8,<svg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;><g fill=&quot;%23f0f0f0&quot; fill-opacity=&quot;0.3&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;1&quot;/></g></g></svg>');
+          "
+        ></div>
 
-            <!-- Subtitle -->
-            <h2
-              class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300"
-            >
-              Crafting Seamless Frontend Experiences
-            </h2>
-
-            <!-- Description -->
-            <p
-              class="text-base text-gray-600 sm:text-lg lg:text-xl dark:text-gray-300 leading-relaxed"
-            >
-              {{ description }}
-            </p>
-
-            <!-- Quick Stats -->
-            <div class="grid grid-cols-2 gap-4 py-4">
-              <div
-                class="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
-              >
-                <div class="text-2xl font-bold text-indigo-600">1+</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">
-                  Years Learning
-                </div>
-              </div>
-              <div
-                class="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
-              >
-                <div class="text-2xl font-bold text-indigo-600">3+</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">
-                  Projects
-                </div>
-              </div>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 pt-2">
-              <a
-                class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-0.5 group"
-                href="#projects-preview"
-              >
-                <span>View My Work</span>
-                <svg
-                  class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Content -->
+            <div class="text-center lg:text-left space-y-8">
+              <div class="space-y-4">
+                <h1
+                  class="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-              </a>
+                  Hi, I'm
+                  <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600"
+                    >Ben Vaes</span
+                  >
+                </h1>
+                <h2
+                  class="text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-medium"
+                >
+                  Frontend Developer & Student
+                </h2>
+              </div>
 
-              <router-link
-                to="/contact"
-                class="inline-flex items-center justify-center rounded-lg border-2 border-gray-300 dark:border-gray-600 px-6 py-3 font-semibold text-gray-700 dark:text-gray-200 shadow-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5"
+              <p
+                class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed"
               >
-                Contact Me
-              </router-link>
-            </div>
-          </div>
+                Passionate about creating beautiful, functional web experiences.
+                Currently studying at PXL University of Applied Sciences and
+                building modern applications with the latest web technologies.
+              </p>
 
-          <!-- Profile Image -->
-          <div
-            class="flex justify-center order-first md:order-last mt-8 md:mt-0 profile-image"
-          >
-            <div class="relative">
+              <!-- Quick Stats -->
+              <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-indigo-600">1+</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-400">
+                    Years Learning
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-purple-600">5+</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-400">
+                    Projects Built
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-green-600">PXL</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-400">
+                    University
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Buttons -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur-lg opacity-30 animate-pulse"
-              ></div>
-              <img
-                src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
-                alt="Ben Vaes - Portfolio Photo"
-                class="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-2xl hover:scale-105 transition-transform duration-300"
-              />
+                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <router-link
+                  to="/projects"
+                  class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  View My Work
+                </router-link>
+                <router-link
+                  to="/contact"
+                  class="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 dark:hover:bg-gray-800 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  Get In Touch
+                </router-link>
+              </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="flex justify-center lg:justify-end">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full blur-3xl opacity-30 animate-pulse"
+                ></div>
+                <img
+                  src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
+                  alt="Ben Vaes"
+                  class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover border-8 border-white dark:border-gray-700 shadow-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <!--Skills section-->
-      <div class="px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48">
-        <SkillsComponent />
-      </div>
 
-      <!-- Project preview section-->
-      <section
-        class="projects-preview py-16 px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48 bg-gray-50 dark:bg-gray-800 w-full"
-        id="projects-preview"
-      >
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-12 projects-header">
-            <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
-            >
-              Featured <span class="text-indigo-600">Projects</span>
+      <!-- Skills Section -->
+      <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Technical <span class="text-indigo-600">Skills</span>
             </h2>
             <p
-              class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             >
-              Here are some of my recent projects that showcase my skills in
-              frontend development
+              Technologies and tools I use to bring ideas to life
+            </p>
+          </div>
+          <SkillsComponent />
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Featured <span class="text-purple-600">Projects</span>
+            </h2>
+            <p
+              class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            >
+              A showcase of my academic work and practical applications
             </p>
           </div>
 
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid"
-          >
-            <ProjectCard
-              v-for="(project, index) in projectsData"
-              :key="index"
-              :title="project.title"
-              :description="project.description"
-              :image="project.image"
-              :link="project.link"
-              class="project-card"
+          <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- WPL2 Project -->
+            <div
+              class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
+              <div class="flex items-center mb-6">
+                <div
+                  class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-xl flex items-center justify-center mr-4"
+                >
+                  <svg
+                    class="w-6 h-6 text-indigo-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                  Etaalent
+                </h3>
+              </div>
+
+              <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                Etaalent is a multidisciplinary project designed to simulate a
+                real-world work environment. My primary role was as the
+                front-end developer, where I collaborated closely with team
+                members from various backgrounds to deliver a functional and
+                user-friendly website
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm font-medium"
+                  >Vue.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                  >Bootstrap</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium"
+                  >Pinia</span
+                >
+              </div>
+
               <router-link
-                :to="`/projects/project-${index + 1}`"
-                class="inline-flex items-center justify-center rounded-lg border-2 border-indigo-600 px-5 py-2.5 font-medium text-indigo-600 dark:text-indigo-400 transition-all duration-300 hover:bg-indigo-600 hover:text-white dark:hover:text-white group"
+                to="/wpl2"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold group"
               >
-                <span>View Details</span>
+                View Case Study
                 <svg
                   class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -158,7 +200,233 @@
                   ></path>
                 </svg>
               </router-link>
-            </ProjectCard>
+            </div>
+
+            <!-- WPL1 Project -->
+            <div
+              class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div class="flex items-center mb-6">
+                <div
+                  class="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-xl flex items-center justify-center mr-4"
+                >
+                  <svg
+                    class="w-6 h-6 text-orange-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 9l3 3-3 3m5 0h3"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                  Paddock Gear
+                </h3>
+              </div>
+
+              <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                As introduction to Vue.js we had to build a simple e-commerce
+                site. I created Paddock Gear a fictional online store for
+                Formula 1 merchandise.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-full text-sm font-medium"
+                  >HTML5</span
+                >
+                <span
+                  class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                  >CSS3</span
+                >
+                <span
+                  class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium"
+                  >PHP</span
+                >
+              </div>
+
+              <router-link
+                :to="
+                  projectsStore.projects.find((p) => p.title === 'Paddock Gear')
+                    .link
+                "
+                class="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold group"
+              >
+                View Project
+                <svg
+                  class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </router-link>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <router-link
+              to="/projects"
+              class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              View All Projects
+            </router-link>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Preview Section -->
+      <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              About <span class="text-green-600">Me</span>
+            </h2>
+            <p
+              class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            >
+              Get to know the person behind the code
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Education Card -->
+            <div
+              class="text-center p-8 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl"
+            >
+              <div
+                class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-indigo-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 14l9-5-9-5-9 5 9 5z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Education</h3>
+              <p class="text-gray-600 font-medium">PXL University</p>
+              <p class="text-gray-500">Web Programming Student</p>
+            </div>
+
+            <!-- Passion Card -->
+            <div
+              class="text-center p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl"
+            >
+              <div
+                class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Passion</h3>
+              <p class="text-gray-600 font-medium">Frontend Development</p>
+              <p class="text-gray-500">Creating User Experiences</p>
+            </div>
+
+            <!-- Goal Card -->
+            <div
+              class="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl"
+            >
+              <div
+                class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Goals</h3>
+              <p class="text-gray-600 font-medium">Seeking Opportunities</p>
+              <p class="text-gray-500">Internships & Junior Roles</p>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <router-link
+              to="/about"
+              class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Learn More About Me
+            </router-link>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section
+        class="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to Work Together?
+          </h2>
+          <p class="text-xl text-indigo-100 mb-10 leading-relaxed">
+            I'm actively seeking internship opportunities and junior frontend
+            developer positions. Let's create something amazing together!
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <router-link
+              to="/contact"
+              class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Get In Touch
+            </router-link>
+            <a
+              href="mailto:ben.vaes@student.pxl.be"
+              class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-indigo-600 transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Send Email
+            </a>
           </div>
         </div>
       </section>
@@ -166,146 +434,21 @@
   </div>
 </template>
 
-<style scoped>
-/* Custom ultrawide screen support */
-@media (min-width: 1600px) {
-  :deep(.3xl\:px-32) {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-}
-
-@media (min-width: 1920px) {
-  :deep(.4xl\:px-48) {
-    padding-left: 12rem;
-    padding-right: 12rem;
-  }
-}
-
-/* Hero section animations */
-.hero-content,
-.profile-image,
-.projects-header,
-.project-card {
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Profile image hover effects */
-.profile-image img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-image:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-/* Button hover effects */
-.inline-flex:hover {
-  transform: translateY(-2px);
-}
-
-/* Smooth scrolling */
-:deep(html) {
-  scroll-behavior: smooth;
-}
-
-/* Custom gradient background for hero */
-.hero-content {
-  position: relative;
-}
-
-/* Project cards grid animation */
-.projects-grid {
-  perspective: 1000px;
-}
-
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobile responsiveness improvements */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-
-  .hero-content h2 {
-    font-size: 1.25rem;
-  }
-
-  .profile-image img {
-    width: 16rem;
-    height: 16rem;
-  }
-}
-
-/* Enhanced button styles */
-.inline-flex {
-  position: relative;
-  overflow: hidden;
-}
-
-.inline-flex:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.inline-flex:hover:before {
-  left: 100%;
-}
-</style>
-
 <script>
 import SkillsComponent from "../components/SkillsComponent.vue";
-import ProjectCard from "../components/ProjectCard.vue";
-import { useProjectsStore } from "@/stores/projects.js";
-import { mapState } from "pinia";
+import { mapStores } from "pinia";
+import { useProjectsStore } from "@/stores/projects";
 
 export default {
   name: "HomeView",
   components: {
     SkillsComponent,
-    ProjectCard,
   },
   computed: {
-    ...mapState(useProjectsStore, {
-      projectsData: "featuredProjects",
-    }),
-  },
-  data() {
-    return {
-      description:
-        "Passionate about building intuitive, responsive, and visually stunning web applications. Let's bring your ideas to life with modern Vue.js and cutting-edge technologies.",
-      observer: null,
-      animatedElements: new Set(),
-    };
+    ...mapStores(useProjectsStore),
   },
   mounted() {
     this.initScrollAnimations();
-  },
-  beforeUnmount() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
   },
   methods: {
     initScrollAnimations() {
@@ -314,59 +457,109 @@ export default {
         rootMargin: "0px 0px -50px 0px",
       };
 
-      this.observer = new IntersectionObserver((entries) => {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (
-            entry.isIntersecting &&
-            !this.animatedElements.has(entry.target)
-          ) {
-            this.animatedElements.add(entry.target);
-            this.animateElement(entry.target);
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
           }
         });
       }, observerOptions);
 
+      // Animate elements on scroll
       this.$nextTick(() => {
-        const elementsToAnimate = [
-          ...this.$el.querySelectorAll(".hero-content"),
-          ...this.$el.querySelectorAll(".profile-image"),
-          ...this.$el.querySelectorAll(".projects-header"),
-          ...this.$el.querySelectorAll(".project-card"),
-        ];
-
+        const elementsToAnimate =
+          this.$el.querySelectorAll(".animate-on-scroll");
         elementsToAnimate.forEach((element) => {
           element.style.opacity = "0";
           element.style.transform = "translateY(30px)";
           element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-          this.observer.observe(element);
+          observer.observe(element);
         });
       });
-    },
-
-    animateElement(element) {
-      const delay = this.getAnimationDelay(element);
-
-      setTimeout(() => {
-        element.style.opacity = "1";
-        element.style.transform = "translateY(0)";
-      }, delay);
-    },
-
-    getAnimationDelay(element) {
-      if (element.classList.contains("hero-content")) {
-        return 0;
-      } else if (element.classList.contains("profile-image")) {
-        return 200;
-      } else if (element.classList.contains("projects-header")) {
-        return 0;
-      } else if (element.classList.contains("project-card")) {
-        const projectCards = Array.from(
-          this.$el.querySelectorAll(".project-card")
-        );
-        return projectCards.indexOf(element) * 150;
-      }
-      return 0;
     },
   },
 };
 </script>
+
+<style scoped>
+/* Smooth animations and transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Gradient text effect */
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Hover effects for cards */
+.hover\:-translate-y-2:hover {
+  transform: translateY(-8px);
+}
+
+.hover\:-translate-y-1:hover {
+  transform: translateY(-4px);
+}
+
+/* Button hover effects */
+.transform:hover {
+  transform: translateY(-4px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom dot pattern background */
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Enhanced shadow effects */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive image sizing */
+@media (max-width: 768px) {
+  .hero img {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Gradient background animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+</style>

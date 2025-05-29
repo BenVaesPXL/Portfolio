@@ -5,12 +5,6 @@
     <div
       class="max-w-full mx-auto text-center px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24"
     >
-      <h2
-        class="text-3xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-3"
-      >
-        My Tech Stack
-      </h2>
-
       <div
         class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 place-items-center"
       >
