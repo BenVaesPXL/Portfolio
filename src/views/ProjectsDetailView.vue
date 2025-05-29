@@ -122,38 +122,6 @@
           </span>
         </div>
       </div>
-
-      <!-- Challenges and Solutions -->
-      <div
-        v-if="project.challenges || project.solutions"
-        class="grid lg:grid-cols-2 gap-8"
-      >
-        <!-- Challenges -->
-        <div
-          v-if="project.challenges"
-          class="bg-red-50 dark:bg-red-900/20 rounded-2xl p-8"
-        >
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Challenges
-          </h3>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            {{ project.challenges }}
-          </p>
-        </div>
-
-        <!-- Solutions -->
-        <div
-          v-if="project.solutions"
-          class="bg-green-50 dark:bg-green-900/20 rounded-2xl p-8"
-        >
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Solutions
-          </h3>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            {{ project.solutions }}
-          </p>
-        </div>
-      </div>
     </div>
 
     <!-- Project Not Found -->

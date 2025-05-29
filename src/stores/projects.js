@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 // Import project images
 import paddockGearImage from "@/assets/images/paddockGear.png";
 import etaalentImage from "@/assets/images/etaalent.png";
+import portfolioWPL1Image from "@/assets/images/Portfolio-BenVaes.jpeg";
 
 export const useProjectsStore = defineStore("projects", {
   state: () => ({
@@ -15,15 +16,12 @@ export const useProjectsStore = defineStore("projects", {
         image: paddockGearImage,
         technologies: ["Vue.js", "Bootstrap", "SCSS"],
         link: "/projects/1",
-        githubUrl: "", // Add if available
+        githubUrl:
+          "https://github.com/PXL-1DVO-WebAdvanced-2425/individuele-opdracht-deel-2-BenVaesPXL", // Add if available
         liveUrl: "", // Add if available
         featured: true,
         category: "E-commerce",
         completedDate: "2024",
-        challenges:
-          "Building a responsive e-commerce interface with modern design patterns",
-        solutions:
-          "Implemented Vue.js with Tailwind CSS for optimal user experience",
       },
       {
         id: 2,
@@ -38,28 +36,20 @@ export const useProjectsStore = defineStore("projects", {
         featured: true,
         category: "Team Project",
         completedDate: "May 2025",
-        challenges:
-          "Collaborating effectively with multidisciplinary teams, including Design and Backend Development, to ensure seamless integration and communication.",
-        solutions:
-          "Established clear communication channels, used Git for version control, and implemented reusable Vue components to streamline development and integration.",
       },
       {
         id: 3,
         title: "Portfolio WPL1",
         description:
           "My first portfolio website showcasing early projects and development journey, built with fundamental web technologies.",
-        image: null,
+        image: portfolioWPL1Image,
         technologies: ["HTML", "CSS", "JavaScript", "Web Fundamentals"],
         link: "/projects/3",
         githubUrl: "", // Add if available
-        liveUrl: "", // Add if available
+        liveUrl: "https://portfoliobenvaes.netlify.app/", // Add if available
         featured: true,
         category: "Portfolio",
         completedDate: "2024",
-        challenges:
-          "Learning fundamental web technologies and creating a professional portfolio",
-        solutions:
-          "Built with core web technologies focusing on clean code and responsive design",
       },
     ],
   }),

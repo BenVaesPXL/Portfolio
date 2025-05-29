@@ -1,6 +1,6 @@
 <template>
   <div
-    class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+    class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full"
   >
     <!-- Image Container -->
     <div class="relative overflow-hidden">
@@ -56,15 +56,15 @@
     </div>
 
     <!-- Content -->
-    <div class="p-6 space-y-4">
-      <div class="space-y-3">
+    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+      <div class="space-y-3 flex-1">
         <h3
           class="text-xl text-gray-900 dark:text-white font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"
         >
           {{ title }}
         </h3>
         <p
-          class="text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3"
+          class="text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3 min-h-[3.5rem]"
         >
           {{ description }}
         </p>
