@@ -14,10 +14,9 @@ export const useProjectsStore = defineStore("projects", {
         description:
           "A motorsport-themed e-commerce platform built with Vue.js.",
         image: paddockGearImage,
-        technologies: ["Vue.js", "Bootstrap", "SCSS"],
+        technologies: ["Vue.js", "Bootstrap", "SCSS", "Pinia"],
         link: "/projects/1",
-        githubUrl:
-          "https://github.com/PXL-1DVO-WebAdvanced-2425/individuele-opdracht-deel-2-BenVaesPXL", // Add if available
+        githubUrl: "", // Add if available
         liveUrl: "", // Add if available
         featured: true,
         category: "E-commerce",

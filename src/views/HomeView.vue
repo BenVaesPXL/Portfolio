@@ -233,20 +233,20 @@
 
               <div class="flex flex-wrap gap-2 mb-6">
                 <span
-                  class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-full text-sm font-medium"
-                  >HTML5</span
+                  class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm font-medium"
+                  >Vue.js</span
                 >
                 <span
                   class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
-                  >CSS3</span
-                >
-                <span
-                  class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium"
-                  >JavaScript</span
+                  >Bootstrap</span
                 >
                 <span
                   class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium"
-                  >PHP</span
+                  >Pinia</span
+                >
+                <span
+                  class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium"
+                  >SCSS</span
                 >
               </div>
 
@@ -307,7 +307,7 @@
               Get In Touch
             </router-link>
             <a
-              href="mailto:ben.vaes@student.pxl.be"
+              href="mailto:bvaes@icloud.com"
               class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-indigo-600 transform hover:-translate-y-1 transition-all duration-300"
             >
               Send Email

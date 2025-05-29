@@ -9,10 +9,14 @@
         <!-- Logo/Brand -->
         <div class="flex-1 md:flex md:items-center md:gap-12">
           <router-link
-            class="block text-gray-900 dark:text-white font-bold text-xl hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            class="flex items-center hover:opacity-80 transition-opacity"
             to="/"
           >
-            {{ title }}
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center brand-logo"
+            >
+              <span class="text-white font-bold text-sm">BV</span>
+            </div>
           </router-link>
         </div>
 
@@ -156,5 +160,24 @@ export default {
 </script>
 
 <style scoped>
+/* Brand logo gradient animation */
+.brand-logo {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6, #06b6d4);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Responsive navigation styles handled by Tailwind classes */
 </style>

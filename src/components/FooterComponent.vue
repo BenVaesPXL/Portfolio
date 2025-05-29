@@ -126,18 +126,30 @@
           </ul>
         </div>
 
-        <!-- Technologies -->
+        <!-- Fun Facts -->
         <div>
           <h3
             class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4"
           >
-            Technologies
+            Fun Facts
           </h3>
           <ul class="space-y-3">
-            <li class="text-gray-600 dark:text-gray-400">Vue.js</li>
-            <li class="text-gray-600 dark:text-gray-400">JavaScript</li>
-            <li class="text-gray-600 dark:text-gray-400">Tailwind CSS</li>
-            <li class="text-gray-600 dark:text-gray-400">Node.js</li>
+            <li class="flex items-center text-gray-600 dark:text-gray-400">
+              <span class="text-lg mr-2">🇧🇪</span>
+              Based in Belgium
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-400">
+              <span class="text-lg mr-2">🏎️</span>
+              Racing Enthusiast
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-400">
+              <span class="text-lg mr-2">🚀</span>
+              Always Learning
+            </li>
+            <li class="flex items-center text-gray-600 dark:text-gray-400">
+              <span class="text-lg mr-2">🎵</span>
+              Music Lover
+            </li>
           </ul>
         </div>
       </div>
