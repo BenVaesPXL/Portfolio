@@ -46,7 +46,7 @@ export const useWpl2Store = defineStore("wpl2", {
             description:
               "PDF with annotated screenshots and/or a private demo video link",
             type: "Visual Demo",
-            link: "/documents/wpl2-screenshots-demo.pdf", // or a video link if available
+            link: "", // or a video link if available
           },
           {
             title: "Technical Documentation",
