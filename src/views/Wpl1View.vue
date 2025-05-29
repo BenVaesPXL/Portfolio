@@ -121,52 +121,6 @@
       </div>
     </section>
 
-    <!-- Learning Outcomes -->
-    <section class="py-16">
-      <div
-        class="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
-      >
-        <div class="max-w-4xl mx-auto">
-          <h2
-            class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-          >
-            Learning Outcomes & Skills Acquired
-          </h2>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div
-              v-for="outcome in learningOutcomes"
-              :key="outcome.id"
-              class="text-center"
-            >
-              <div
-                :class="`w-16 h-16 ${outcome.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`"
-              >
-                <svg
-                  :class="`w-8 h-8 ${outcome.iconColor}`"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    :d="outcome.iconPath"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                {{ outcome.title }}
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300">
-                {{ outcome.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Reflection & Documentation -->
     <section class="py-16 bg-gray-100 dark:bg-gray-800">
       <div
@@ -235,10 +189,6 @@ export default {
 
     assignments() {
       return this.wpl1Store.assignments;
-    },
-
-    learningOutcomes() {
-      return this.wpl1Store.learningOutcomes;
     },
 
     reflectionText() {
