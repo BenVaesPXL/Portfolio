@@ -115,6 +115,7 @@
               :call-to-action="assignment.callToAction"
               :skills="assignment.skills"
               :download-link="assignment.downloadLink"
+              :pop-pdfs="assignment.popPdfs"
             />
           </div>
         </div>

@@ -69,10 +69,21 @@ export const useWpl1Store = defineStore("wpl1", {
             textColor: "text-green-800",
           },
         ],
-        downloadLink: {
-          url: "#",
-          text: "Download POP Sessions Reflection PDF",
-        },
+        popPdfs: [
+          {
+            url: "/documents/Les2 - POP - Wat is jouw motivatie Ben Vaes.pdf",
+            text: "POP: Wat is jouw motivatie?",
+          },
+          {
+            url: "/documents/Opdracht Feedback & Reflecteren Ben Vaes.pdf",
+            text: "POP: Feedback & Reflecteren",
+          },
+          {
+            url: "/documents/Vragenlijst Personal Branding vs Imago.pdf",
+            text: "POP: Personal Branding vs Imago",
+          },
+        ],
+        downloadLink: null,
       },
       {
         id: 2,
@@ -93,8 +104,8 @@ export const useWpl1Store = defineStore("wpl1", {
           },
         ],
         downloadLink: {
-          url: "#",
-          text: "Download Company Seminar Reflections PDF",
+          url: "/documents/Reflectie Seminars WPL1 Vaes Ben.pdf",
+          text: "Company Seminar Reflections PDF",
         },
       },
       {
@@ -122,8 +133,8 @@ export const useWpl1Store = defineStore("wpl1", {
           },
         ],
         downloadLink: {
-          url: "#",
-          text: "Download Job Market Analysis Report PDF",
+          url: "/documents/Analyse arbeidsmarkt Vaes Ben.pdf",
+          text: "Job Market Analysis Report PDF",
         },
       },
       {
