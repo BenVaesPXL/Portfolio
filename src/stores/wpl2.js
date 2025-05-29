@@ -36,11 +36,10 @@ export const useWpl2Store = defineStore("wpl2", {
       finalResults: {
         deliverables: [
           {
-            title: "Screenshots & Demo",
-            description:
-              "PDF with annotated screenshots and/or a private demo video link",
+            title: "Screenshots",
+            description: "PDF with annotated screenshots",
             type: "Visual Demo",
-            link: "", // or a video link if available
+            link: "../documents/Etaalentscreens.pdf", // or a video link if available
           },
           {
             title: "Technical Documentation",
@@ -48,12 +47,6 @@ export const useWpl2Store = defineStore("wpl2", {
               "Explanation of architecture, technologies, and implementation (no source code)",
             type: "Documentation",
             link: "/documents/wpl2-frontend-team-01-README.pdf",
-          },
-          {
-            title: "Reflection Document",
-            description: "Personal reflection on the project and learnings",
-            type: "Reflection",
-            link: "/documents/eindreflectiewpl2.pdf",
           },
         ],
         technicalAchievements: [
