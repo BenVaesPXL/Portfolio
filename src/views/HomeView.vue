@@ -133,7 +133,7 @@
           <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <!-- WPL2 Project -->
             <div
-              class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              class="bg-white dark:bg-gray-900 flex flex-col justify-around rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div class="flex items-center mb-6">
                 <div
@@ -202,9 +202,9 @@
               </router-link>
             </div>
 
-            <!-- WPL1 Project -->
+            <!-- Paddock Gear Project -->
             <div
-              class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              class="bg-white dark:bg-gray-900 flex flex-col justify-around rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div class="flex items-center mb-6">
                 <div
