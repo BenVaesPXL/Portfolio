@@ -9,19 +9,19 @@
       >
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            WPL2: Advanced Web Programming
+            {{ courseInfo.title }}
           </h1>
           <p class="text-xl md:text-2xl mb-8 text-purple-100">
-            Modern Frontend Development with Vue.js
+            {{ courseInfo.subtitle }}
           </p>
           <div class="flex flex-wrap justify-center gap-4 text-sm">
-            <span class="px-4 py-2 bg-white/20 rounded-full">Vue.js 3</span>
-            <span class="px-4 py-2 bg-white/20 rounded-full"
-              >JavaScript ES6+</span
+            <span
+              v-for="tech in technologies"
+              :key="tech"
+              class="px-4 py-2 bg-white/20 rounded-full"
             >
-            <span class="px-4 py-2 bg-white/20 rounded-full">Tailwind CSS</span>
-            <span class="px-4 py-2 bg-white/20 rounded-full">Vite</span>
-            <span class="px-4 py-2 bg-white/20 rounded-full">Pinia</span>
+              {{ tech }}
+            </span>
           </div>
         </div>
       </div>
@@ -35,14 +35,12 @@
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-              Case Study: Modern Portfolio Development
+              {{ caseStudy.title }}
             </h2>
             <p
               class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
             >
-              This portfolio itself serves as the primary case study for WPL2,
-              demonstrating the implementation of modern web development
-              practices using Vue.js ecosystem.
+              {{ caseStudy.description }}
             </p>
           </div>
 
@@ -52,48 +50,17 @@
                 Project Objectives
               </h3>
               <div class="space-y-4">
-                <div class="flex items-start">
+                <div
+                  v-for="objective in caseStudy.projectObjectives"
+                  :key="objective.title"
+                  class="flex items-start"
+                >
                   <div
                     class="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3"
                   ></div>
                   <p class="text-gray-600 dark:text-gray-300">
-                    <strong>Component-Based Architecture:</strong> Build
-                    reusable Vue.js components
-                  </p>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3"
-                  ></div>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    <strong>Modern Styling:</strong> Implement responsive design
-                    with Tailwind CSS
-                  </p>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3"
-                  ></div>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    <strong>State Management:</strong> Utilize Pinia for
-                    application state
-                  </p>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3"
-                  ></div>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    <strong>Routing:</strong> Implement SPA navigation with Vue
-                    Router
-                  </p>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3"
-                  ></div>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    <strong>Performance:</strong> Optimize with Vite build tool
+                    <strong>{{ objective.title }}:</strong>
+                    {{ objective.description }}
                   </p>
                 </div>
               </div>
@@ -103,46 +70,65 @@
                 Technical Specifications
               </h3>
               <div class="space-y-3">
-                <div class="flex justify-between">
+                <div
+                  v-if="caseStudy.technicalSpecs.framework"
+                  class="flex justify-between"
+                >
                   <span class="text-gray-600 dark:text-gray-300"
                     >Framework:</span
                   >
-                  <span class="text-gray-900 dark:text-white font-medium"
-                    >Vue.js 3</span
-                  >
+                  <span class="text-gray-900 dark:text-white font-medium">{{
+                    caseStudy.technicalSpecs.framework
+                  }}</span>
                 </div>
-                <div class="flex justify-between">
+                <div
+                  v-if="caseStudy.technicalSpecs.buildTool"
+                  class="flex justify-between"
+                >
                   <span class="text-gray-600 dark:text-gray-300"
                     >Build Tool:</span
                   >
-                  <span class="text-gray-900 dark:text-white font-medium"
-                    >Vite</span
-                  >
+                  <span class="text-gray-900 dark:text-white font-medium">{{
+                    caseStudy.technicalSpecs.buildTool
+                  }}</span>
                 </div>
-                <div class="flex justify-between">
+                <div
+                  v-if="caseStudy.technicalSpecs.styling"
+                  class="flex justify-between"
+                >
                   <span class="text-gray-600 dark:text-gray-300">Styling:</span>
-                  <span class="text-gray-900 dark:text-white font-medium"
-                    >Tailwind CSS</span
-                  >
+                  <span class="text-gray-900 dark:text-white font-medium">{{
+                    caseStudy.technicalSpecs.styling
+                  }}</span>
                 </div>
-                <div class="flex justify-between">
+                <div
+                  v-if="caseStudy.technicalSpecs.state"
+                  class="flex justify-between"
+                >
                   <span class="text-gray-600 dark:text-gray-300">State:</span>
-                  <span class="text-gray-900 dark:text-white font-medium"
-                    >Pinia</span
-                  >
+                  <span class="text-gray-900 dark:text-white font-medium">{{
+                    caseStudy.technicalSpecs.state
+                  }}</span>
                 </div>
-                <div class="flex justify-between">
+                <div
+                  v-if="caseStudy.technicalSpecs.routing"
+                  class="flex justify-between"
+                >
                   <span class="text-gray-600 dark:text-gray-300">Routing:</span>
-                  <span class="text-gray-900 dark:text-white font-medium"
-                    >Vue Router 4</span
-                  >
+                  <span class="text-gray-900 dark:text-white font-medium">{{
+                    caseStudy.technicalSpecs.routing
+                  }}</span>
                 </div>
-                <div class="flex justify-between">
+                <div
+                  v-if="caseStudy.technicalSpecs.deployment"
+                  class="flex justify-between"
+                >
                   <span class="text-gray-600 dark:text-gray-300"
                     >Deployment:</span
                   >
-                  <span class="text-green-600 dark:text-green-400 font-medium"
-                    >Vercel/Netlify</span
+                  <span
+                    class="text-green-600 dark:text-green-400 font-medium"
+                    >{{ caseStudy.technicalSpecs.deployment }}</span
                   >
                 </div>
               </div>
@@ -152,169 +138,7 @@
       </div>
     </section>
 
-    <!-- Implementation Details -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-800">
-      <div
-        class="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
-      >
-        <div class="max-w-4xl mx-auto">
-          <h2
-            class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-          >
-            Implementation Highlights
-          </h2>
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- Component Architecture -->
-            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3"
-                >
-                  <svg
-                    class="w-6 h-6 text-green-600 dark:text-green-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                  Component Architecture
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Designed a modular component structure with reusable elements
-                like NavComponent, FooterComponent, ProjectCard, and
-                SkillsComponent.
-              </p>
-              <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <li>• Composition API usage</li>
-                <li>• Props and emit patterns</li>
-                <li>• Scoped styling</li>
-                <li>• Component lifecycle management</li>
-              </ul>
-            </div>
-
-            <!-- Responsive Design -->
-            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3"
-                >
-                  <svg
-                    class="w-6 h-6 text-blue-600 dark:text-blue-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                  Responsive Design
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Implemented mobile-first responsive design using Tailwind CSS
-                utility classes and custom breakpoints for optimal viewing on
-                all devices.
-              </p>
-              <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <li>• Mobile-first approach</li>
-                <li>• Custom breakpoints</li>
-                <li>• Flexible grid systems</li>
-                <li>• Touch-friendly interactions</li>
-              </ul>
-            </div>
-
-            <!-- State Management -->
-            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3"
-                >
-                  <svg
-                    class="w-6 h-6 text-purple-600 dark:text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                  State Management
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Utilized Pinia for managing application state, including project
-                data, theme preferences, and dynamic content.
-              </p>
-              <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <li>• Pinia store implementation</li>
-                <li>• Reactive state updates</li>
-                <li>• Actions and getters</li>
-                <li>• Persistent storage</li>
-              </ul>
-            </div>
-
-            <!-- Performance Optimization -->
-            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-3"
-                >
-                  <svg
-                    class="w-6 h-6 text-orange-600 dark:text-orange-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                  Performance
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Optimized performance through code splitting, lazy loading, and
-                efficient build processes using Vite's advanced features.
-              </p>
-              <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <li>• Vite HMR development</li>
-                <li>• Code splitting</li>
-                <li>• Lazy route loading</li>
-                <li>• Optimized builds</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Challenges & Solutions -->
+    <!-- Case Study Details -->
     <section class="py-16">
       <div
         class="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
@@ -323,104 +147,52 @@
           <h2
             class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
           >
-            Challenges & Solutions
+            Case Study Analysis
           </h2>
-          <div class="space-y-8">
-            <!-- Challenge 1 -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Challenge: Component Communication
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Managing data flow between multiple components while maintaining
-                clean code structure.
-              </p>
-              <div
-                class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4"
-              >
-                <h4
-                  class="font-semibold text-green-800 dark:text-green-400 mb-2"
-                >
-                  Solution:
-                </h4>
-                <p class="text-green-700 dark:text-green-300">
-                  Implemented Pinia stores for global state management and used
-                  props/emit for local component communication. This created a
-                  clear separation between global and local state.
-                </p>
-              </div>
-            </div>
 
-            <!-- Challenge 2 -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Challenge: Responsive Design Complexity
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Creating a consistently beautiful design across all device sizes
-                while maintaining performance.
-              </p>
+          <!-- Case Description -->
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
               <div
-                class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4"
+                class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3"
               >
-                <h4 class="font-semibold text-blue-800 dark:text-blue-400 mb-2">
-                  Solution:
-                </h4>
-                <p class="text-blue-700 dark:text-blue-300">
-                  Utilized Tailwind CSS's utility-first approach with custom
-                  breakpoints and extensive testing across multiple devices to
-                  ensure optimal user experience.
-                </p>
-              </div>
-            </div>
-
-            <!-- Challenge 3 -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Challenge: SEO and Performance
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Ensuring good SEO practices and fast loading times in a
-                single-page application.
-              </p>
-              <div
-                class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-500 p-4"
-              >
-                <h4
-                  class="font-semibold text-purple-800 dark:text-purple-400 mb-2"
+                <svg
+                  class="w-5 h-5 text-blue-600 dark:text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  Solution:
-                </h4>
-                <p class="text-purple-700 dark:text-purple-300">
-                  Implemented proper meta tags, structured data, lazy loading
-                  for images, and code splitting to improve both SEO rankings
-                  and page load performance.
-                </p>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
               </div>
+              Case Description
+            </h3>
+            <div class="prose dark:prose-invert max-w-none">
+              <p
+                class="text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line"
+              >
+                {{ caseStudy.caseDescription }}
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Learning Outcomes -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-800">
-      <div
-        class="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
-      >
-        <div class="max-w-4xl mx-auto">
-          <h2
-            class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-          >
-            Key Learning Outcomes
-          </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="text-center">
+          <!-- Personal Contribution -->
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
               <div
-                class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mx-auto mb-4"
+                class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3"
               >
                 <svg
-                  class="w-8 h-8 text-indigo-600 dark:text-indigo-400"
+                  class="w-5 h-5 text-green-600 dark:text-green-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -429,24 +201,31 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                Vue.js Mastery
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Deep understanding of Vue 3 features including Composition API,
-                reactivity, and component lifecycle.
+              My Personal Contribution
+            </h3>
+            <div class="prose dark:prose-invert max-w-none">
+              <p
+                class="text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line"
+              >
+                {{ caseStudy.myContribution }}
               </p>
             </div>
-            <div class="text-center">
+          </div>
+
+          <!-- Learnings and Insights -->
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
               <div
-                class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4"
+                class="w-8 h-8 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3"
               >
                 <svg
-                  class="w-8 h-8 text-green-600 dark:text-green-400"
+                  class="w-5 h-5 text-purple-600 dark:text-purple-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -455,50 +234,31 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                Modern CSS
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Proficiency in Tailwind CSS, responsive design patterns, and
-                modern layout techniques.
+              Learnings & Insights
+            </h3>
+            <div class="prose dark:prose-invert max-w-none">
+              <p
+                class="text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line"
+              >
+                {{ caseStudy.learningsAndInsights }}
               </p>
             </div>
-            <div class="text-center">
+          </div>
+
+          <!-- Final Results & Deliverables -->
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
               <div
-                class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4"
+                class="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-3"
               >
                 <svg
-                  class="w-8 h-8 text-purple-600 dark:text-purple-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                Build Tools
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Experience with modern development tools like Vite, including
-                HMR and optimization strategies.
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <svg
-                  class="w-8 h-8 text-orange-600 dark:text-orange-400"
+                  class="w-5 h-5 text-orange-600 dark:text-orange-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -511,133 +271,68 @@
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                Best Practices
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Application of industry best practices for code organization,
-                performance, and maintainability.
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-16 h-16 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <svg
-                  class="w-8 h-8 text-pink-600 dark:text-pink-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                UX Design
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Understanding of user experience principles and their
-                implementation in web applications.
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-16 h-16 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <svg
-                  class="w-8 h-8 text-teal-600 dark:text-teal-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                Performance
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
-                Knowledge of performance optimization techniques for modern web
-                applications.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+              Final Results & Deliverables
+            </h3>
 
-    <!-- Future Improvements -->
-    <section class="py-16">
-      <div
-        class="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
-      >
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-            Future Enhancements
-          </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            While this portfolio demonstrates strong foundational skills in
-            modern web development, there are several areas identified for
-            future improvement and expansion.
-          </p>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-                Dark Mode Implementation
+            <!-- Deliverables -->
+            <div class="mb-8">
+              <h4
+                class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+              >
+                Project Deliverables
               </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Complete dark/light theme toggle functionality
-              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div
+                  v-for="deliverable in caseStudy.finalResults.deliverables"
+                  :key="deliverable.title"
+                  class="border border-gray-200 dark:border-gray-700 p-4 rounded-lg"
+                >
+                  <div class="flex items-center mb-2">
+                    <span
+                      class="text-sm font-medium text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900 px-2 py-1 rounded"
+                    >
+                      {{ deliverable.type }}
+                    </span>
+                  </div>
+                  <h5 class="font-semibold text-gray-900 dark:text-white mb-1">
+                    <a
+                      v-if="deliverable.link"
+                      :href="deliverable.link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="underline hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                    >
+                      {{ deliverable.title }}
+                    </a>
+                    <span v-else>{{ deliverable.title }}</span>
+                  </h5>
+                  <p class="text-sm text-gray-600 dark:text-gray-300">
+                    {{ deliverable.description }}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-                Blog Integration
+
+            <!-- Technical Achievements -->
+            <div>
+              <h4
+                class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+              >
+                Technical Achievements
               </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Add a blog section for technical articles
-              </p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-                Contact Form
-              </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Implement functional contact form with backend
-              </p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-                Animations
-              </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Enhanced micro-interactions and page transitions
-              </p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-                PWA Features
-              </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Progressive Web App capabilities
-              </p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-                Testing Suite
-              </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Comprehensive unit and integration tests
-              </p>
+              <div class="grid md:grid-cols-2 gap-3">
+                <div
+                  v-for="achievement in caseStudy.finalResults
+                    .technicalAchievements"
+                  :key="achievement"
+                  class="flex items-center"
+                >
+                  <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <span class="text-sm text-gray-600 dark:text-gray-300">{{
+                    achievement
+                  }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -659,55 +354,32 @@
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
-              class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors"
+              v-for="link in downloadLinks"
+              :key="link.id"
+              :href="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              :class="`inline-flex items-center px-6 py-3 ${link.buttonColor} text-white font-medium rounded-lg transition-colors`"
             >
               <svg
                 class="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
+                :fill="link.primary ? 'currentColor' : 'none'"
+                :stroke="link.primary ? 'none' : 'currentColor'"
                 viewBox="0 0 24 24"
               >
                 <path
+                  v-if="link.primary"
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+                <path
+                  v-else
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 ></path>
               </svg>
-              Download Case Study PDF
-            </a>
-            <a
-              href="https://github.com/benvaes/portfolio-wpl2"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors"
-            >
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                />
-              </svg>
-              View Source Code
-            </a>
-            <a
-              href="#"
-              class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors"
-            >
-              <svg
-                class="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-              View Live Demo
+              {{ link.text }}
             </a>
           </div>
         </div>
@@ -717,15 +389,37 @@
 </template>
 
 <script>
+import { mapStores } from "pinia";
+import { useWpl2Store } from "@/stores/wpl2";
+
 export default {
   name: "Wpl2View",
+  computed: {
+    ...mapStores(useWpl2Store),
+
+    courseInfo() {
+      return this.wpl2Store.courseInfo;
+    },
+
+    technologies() {
+      return this.wpl2Store.technologies;
+    },
+
+    caseStudy() {
+      return this.wpl2Store.caseStudy;
+    },
+
+    downloadLinks() {
+      return this.wpl2Store.downloadLinks;
+    },
+  },
   metaInfo: {
-    title: "WPL2 Case Study - Advanced Web Programming | Ben Vaes",
+    title: "WPL2 - Advanced Web Programming | Ben Vaes",
     meta: [
       {
         name: "description",
         content:
-          "Comprehensive case study of WPL2 portfolio development using Vue.js, Tailwind CSS, and modern web development practices.",
+          "WPL2 case study showcasing modern web development with Vue.js, featuring the Etaalent project and advanced frontend development techniques.",
       },
     ],
   },
