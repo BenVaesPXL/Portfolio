@@ -36,9 +36,11 @@
               <p
                 class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed"
               >
-                Passionate about creating beautiful, functional web experiences.
-                Currently studying at PXL University of Applied Sciences and
-                building modern applications with the latest web technologies.
+                I'm a frontend developer and student at PXL University of
+                Applied Sciences, passionate about building web apps that are
+                both visually appealing and genuinely useful. I love turning
+                ideas into interactive experiences, and I'm always experimenting
+                with new tech to make the web more fun and accessible.
               </p>
 
               <!-- Quick Stats -->
