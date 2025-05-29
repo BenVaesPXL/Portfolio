@@ -33,7 +33,7 @@
                 class="text-center p-4 md:p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow duration-300"
               >
                 <div class="text-2xl md:text-3xl font-bold text-indigo-600">
-                  3+
+                  1+
                 </div>
                 <div
                   class="text-sm md:text-base text-gray-600 dark:text-gray-400"
@@ -45,7 +45,7 @@
                 class="text-center p-4 md:p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow duration-300"
               >
                 <div class="text-2xl md:text-3xl font-bold text-indigo-600">
-                  5+
+                  3+
                 </div>
                 <div
                   class="text-sm md:text-base text-gray-600 dark:text-gray-400"
@@ -75,144 +75,43 @@
 
     <!-- Skills & Expertise -->
     <section class="py-16 bg-gray-50 dark:bg-gray-800">
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24 3xl:px-32 4xl:px-48"
-      >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
           Skills & Expertise
         </h2>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Frontend Development -->
-          <div
-            class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-indigo-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">Frontend Development</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">
-              Building responsive, interactive user interfaces with modern
-              frameworks.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm hover:bg-indigo-200 dark:hover:bg-indigo-800 transition-colors"
-                >Vue.js</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm hover:bg-indigo-200 dark:hover:bg-indigo-800 transition-colors"
-                >JavaScript</span
-              >
-              <span
-                class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm hover:bg-indigo-200 dark:hover:bg-indigo-800 transition-colors"
-                >HTML5</span
-              >
-            </div>
-          </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          <ExpertiseCard
+            title="Frontend Development"
+            description="Building responsive, interactive user interfaces with modern frameworks."
+            :skills="['Vue.js', 'HTML', 'CSS', 'Bootstrap', 'SCSS']"
+            icon-path="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+            color-theme="indigo"
+          />
 
-          <!-- Styling & Design -->
-          <div
-            class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-purple-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">Styling & Design</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">
-              Creating beautiful, consistent designs with modern CSS frameworks.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
-                >Tailwind CSS</span
-              >
-              <span
-                class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
-                >SCSS</span
-              >
-              <span
-                class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
-                >Bootstrap</span
-              >
-            </div>
-          </div>
+          <ExpertiseCard
+            title="Backend Development"
+            description="Creating robust server-side applications and APIs with modern technologies."
+            :skills="['MongoDB', 'Node.js', 'Express', 'Restful APIs']"
+            icon-path="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
+            color-theme="green"
+          />
 
-          <!-- Tools & Workflow -->
-          <div
-            class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">Tools & Workflow</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">
-              Efficient development workflow with modern tools and version
-              control.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm hover:bg-green-200 dark:hover:bg-green-800 transition-colors"
-                >Git</span
-              >
-              <span
-                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm hover:bg-green-200 dark:hover:bg-green-800 transition-colors"
-                >GitHub</span
-              >
-              <span
-                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm hover:bg-green-200 dark:hover:bg-green-800 transition-colors"
-                >VS Code</span
-              >
-            </div>
-          </div>
+          <ExpertiseCard
+            title="Styling & Design"
+            description="Creating beautiful, consistent designs with modern CSS frameworks."
+            :skills="['UI Design', 'UX Design']"
+            icon-path="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+            color-theme="purple"
+          />
+
+          <ExpertiseCard
+            title="Tools & Workflow"
+            description="Efficient development workflow with modern tools and version control."
+            :skills="['GitHub', 'VS Code', 'Figma', 'Postman']"
+            icon-path="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            color-theme="indigo"
+          />
         </div>
       </div>
     </section>
@@ -234,69 +133,26 @@
 
           <!-- Timeline items -->
           <div class="space-y-8 md:space-y-12">
-            <div
-              class="relative flex items-start md:items-center timeline-item"
-            >
-              <div
-                class="absolute left-2 md:left-6 top-2 md:top-auto w-4 h-4 bg-indigo-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"
-              ></div>
-              <div
-                class="ml-12 md:ml-16 bg-white dark:bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div class="text-sm text-indigo-600 font-medium">
-                  2024 - Present
-                </div>
-                <h3 class="text-lg md:text-xl font-semibold mt-1">
-                  Advanced Frontend Development
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">
-                  Specializing in Vue.js and modern web technologies at PXL.
-                  Working on complex projects like Etaalent and building
-                  responsive, user-focused applications.
-                </p>
-              </div>
-            </div>
+            <TimelineCard
+              date="2025 - Present"
+              title="Advanced Frontend Development"
+              description="Made first project in Vue.js and learned basic backend at PXL. Working on complex projects like Etaalent and building responsive, user-focused applications."
+              color-theme="indigo"
+            />
 
-            <div
-              class="relative flex items-start md:items-center timeline-item"
-            >
-              <div
-                class="absolute left-2 md:left-6 top-2 md:top-auto w-4 h-4 bg-purple-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"
-              ></div>
-              <div
-                class="ml-12 md:ml-16 bg-white dark:bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div class="text-sm text-purple-600 font-medium">2023</div>
-                <h3 class="text-lg md:text-xl font-semibold mt-1">
-                  Frontend Foundations
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">
-                  Started my journey with HTML, CSS, and JavaScript. Built my
-                  first Vue.js project (Paddock Gear) and discovered my passion
-                  for frontend development.
-                </p>
-              </div>
-            </div>
+            <TimelineCard
+              date="2024"
+              title="Frontend Foundations"
+              description="Started my journey with HTML, CSS, and JavaScript. And discovered my passion for frontend development."
+              color-theme="purple"
+            />
 
-            <div
-              class="relative flex items-start md:items-center timeline-item"
-            >
-              <div
-                class="absolute left-2 md:left-6 top-2 md:top-auto w-4 h-4 bg-green-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"
-              ></div>
-              <div
-                class="ml-12 md:ml-16 bg-white dark:bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div class="text-sm text-green-600 font-medium">2022</div>
-                <h3 class="text-lg md:text-xl font-semibold mt-1">
-                  Programming Journey Begins
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">
-                  Started studying at PXL and fell in love with web development.
-                  Learned the fundamentals of programming and web technologies.
-                </p>
-              </div>
-            </div>
+            <TimelineCard
+              date="Feb 2024"
+              title="Development Journey Begins"
+              description="Started at PXL with 'Digitale Vormgeving'. Learned the fundamentals of development and design, building a strong foundation in both Web Development and visual communication."
+              color-theme="green"
+            />
           </div>
         </div>
       </div>
@@ -411,8 +267,15 @@
 </template>
 
 <script>
+import ExpertiseCard from "../components/ExpertiseCard.vue";
+import TimelineCard from "../components/TimelineCard.vue";
+
 export default {
   name: "AboutView",
+  components: {
+    ExpertiseCard,
+    TimelineCard,
+  },
   data() {
     return {
       observer: null,
