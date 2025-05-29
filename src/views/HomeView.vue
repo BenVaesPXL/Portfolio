@@ -50,7 +50,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <div class="text-3xl font-bold text-purple-600">5+</div>
+                  <div class="text-3xl font-bold text-purple-600">3+</div>
                   <div class="text-sm text-gray-500 dark:text-gray-400">
                     Projects Built
                   </div>
@@ -84,16 +84,11 @@
 
             <!-- Hero Image -->
             <div class="flex justify-center lg:justify-end">
-              <div class="relative">
-                <div
-                  class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full blur-3xl opacity-30 animate-pulse"
-                ></div>
-                <img
-                  src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
-                  alt="Ben Vaes"
-                  class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover border-8 border-white dark:border-gray-700 shadow-2xl"
-                />
-              </div>
+              <img
+                src="../assets/images/profilepic.png"
+                alt="Ben Vaes"
+                class="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+              />
             </div>
           </div>
         </div>

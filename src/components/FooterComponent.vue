@@ -101,6 +101,22 @@
             </li>
             <li>
               <router-link
+                to="/wpl1"
+                class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+              >
+                WPL1
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="/wpl2"
+                class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+              >
+                WPL2 Case Study
+              </router-link>
+            </li>
+            <li>
+              <router-link
                 to="/contact"
                 class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
               >

@@ -58,16 +58,11 @@
 
           <!-- Profile Image -->
           <div class="flex justify-center order-first md:order-last">
-            <div class="relative">
-              <div
-                class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur-lg opacity-30 animate-pulse"
-              ></div>
-              <img
-                src="https://i.pinimg.com/236x/f4/fd/eb/f4fdebc1d602c057fa8bcd3cfc8a139f.jpg"
-                alt="Ben Vaes - Profile Photo"
-                class="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-xl hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+            <img
+              src="../assets/images/profilepic.png"
+              alt="Ben Vaes - Profile Photo"
+              class="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            />
           </div>
         </div>
       </div>
