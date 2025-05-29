@@ -101,13 +101,6 @@ export const useWpl2Store = defineStore("wpl2", {
 
     downloadLinks: [
       {
-        id: 2,
-        text: "Technical Documentation PDF",
-        url: "/documents/wpl2-technical-documentation.pdf",
-        buttonColor: "bg-purple-600 hover:bg-purple-700",
-        primary: false,
-      },
-      {
         id: 3,
         text: "Reflection WPL2",
         url: "/documents/eindreflectiewpl2.pdf",
