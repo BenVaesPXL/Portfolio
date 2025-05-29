@@ -168,98 +168,27 @@
         </h2>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div class="text-center group">
-            <div
-              class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-800 transition-all duration-300"
-            >
-              <svg
-                class="w-8 h-8 text-indigo-600 group-hover:text-indigo-700 transition-colors duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                ></path>
-              </svg>
-            </div>
-            <h3
-              class="text-xl font-semibold mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"
-            >
-              Motorsports
-            </h3>
-            <p
-              class="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300"
-            >
-              Passionate Formula 1 fan who loves the technical precision and
-              innovation in racing.
-            </p>
-          </div>
+          <InterestCard
+            title="Motorsports"
+            description="Passionate Formula 1 fan who loves the technical precision and innovation in racing."
+            icon-path="M13 10V3L4 14h7v7l9-11h-7z"
+            color-theme="indigo"
+          />
 
-          <div class="text-center group">
-            <div
-              class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-purple-200 dark:group-hover:bg-purple-800 transition-all duration-300"
-            >
-              <svg
-                class="w-8 h-8 text-purple-600 group-hover:text-purple-700 transition-colors duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                ></path>
-              </svg>
-            </div>
-            <h3
-              class="text-xl font-semibold mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300"
-            >
-              Learning
-            </h3>
-            <p
-              class="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300"
-            >
-              Always exploring new technologies and staying up-to-date with the
-              latest web development trends.
-            </p>
-          </div>
+          <InterestCard
+            title="Learning"
+            description="Always exploring new technologies and staying up-to-date with the latest web development trends."
+            icon-path="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            color-theme="purple"
+          />
 
-          <div class="text-center group sm:col-span-2 md:col-span-1">
-            <div
-              class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-green-200 dark:group-hover:bg-green-800 transition-all duration-300"
-            >
-              <svg
-                class="w-8 h-8 text-green-600 group-hover:text-green-700 transition-colors duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                ></path>
-              </svg>
-            </div>
-            <h3
-              class="text-xl font-semibold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300"
-            >
-              Side Projects
-            </h3>
-            <p
-              class="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300"
-            >
-              Building personal projects that combine my interests with coding
-              challenges.
-            </p>
-          </div>
+          <InterestCard
+            title="Side Projects"
+            description="Building personal projects that combine my interests with coding challenges."
+            icon-path="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            color-theme="green"
+            class="sm:col-span-2 md:col-span-1"
+          />
         </div>
       </div>
     </section>
@@ -269,12 +198,14 @@
 <script>
 import ExpertiseCard from "../components/ExpertiseCard.vue";
 import TimelineCard from "../components/TimelineCard.vue";
+import InterestCard from "../components/InterestCard.vue";
 
 export default {
   name: "AboutView",
   components: {
     ExpertiseCard,
     TimelineCard,
+    InterestCard,
   },
   data() {
     return {
