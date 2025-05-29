@@ -26,11 +26,21 @@
           <div class="space-y-8">
             <div>
               <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
-              <p class="text-gray-600 dark:text-gray-300 mb-8">
-                I'm currently available for internships and junior frontend
-                developer positions. Let's discuss how I can contribute to your
-                team!
-              </p>
+              <div
+                class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4"
+              >
+                <div class="flex items-center">
+                  <div
+                    class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"
+                  ></div>
+                  <span class="text-green-700 dark:text-green-400 font-medium"
+                    >Available for opportunities</span
+                  >
+                </div>
+                <p class="text-green-600 dark:text-green-300 text-sm mt-1">
+                  Currently seeking internships and junior frontend positions
+                </p>
+              </div>
             </div>
 
             <!-- Contact Methods -->
@@ -57,10 +67,10 @@
                 <div>
                   <h3 class="font-semibold">Email</h3>
                   <a
-                    href="mailto:ben.vaes@student.pxl.be"
+                    href="mailto:bvaes@icloud.com"
                     class="text-indigo-600 hover:text-indigo-700 transition-colors"
                   >
-                    ben.vaes@student.pxl.be
+                    bvaes@icloud.com
                   </a>
                 </div>
               </div>
@@ -87,10 +97,10 @@
                 <div>
                   <h3 class="font-semibold">Phone</h3>
                   <a
-                    href="tel:+32123456789"
+                    href="tel:+32475619395"
                     class="text-green-600 hover:text-green-700 transition-colors"
                   >
-                    +32 123 456 789
+                    +32 475 61 93 95
                   </a>
                 </div>
               </div>
@@ -122,9 +132,7 @@
                 </div>
                 <div>
                   <h3 class="font-semibold">Location</h3>
-                  <p class="text-gray-600 dark:text-gray-400">
-                    Belgium (Open to relocation)
-                  </p>
+                  <p class="text-gray-600 dark:text-gray-400">Belgium</p>
                 </div>
               </div>
             </div>
@@ -179,28 +187,18 @@
             </div>
 
             <!-- Availability Status -->
-            <div
-              class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4"
-            >
-              <div class="flex items-center">
-                <div
-                  class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"
-                ></div>
-                <span class="text-green-700 dark:text-green-400 font-medium"
-                  >Available for opportunities</span
-                >
-              </div>
-              <p class="text-green-600 dark:text-green-300 text-sm mt-1">
-                Currently seeking internships and junior frontend positions
-              </p>
-            </div>
           </div>
 
           <!-- Contact Form -->
           <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
             <h3 class="text-2xl font-bold mb-6">Send me a message</h3>
 
-            <form @submit.prevent="submitForm" class="space-y-6">
+            <form
+              action="https://formspree.io/f/mblonnrd"
+              method="POST"
+              @submit.prevent="submitForm"
+              class="space-y-6"
+            >
               <!-- Name Field -->
               <div>
                 <label for="name" class="block text-sm font-medium mb-2"
@@ -209,13 +207,12 @@
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   v-model="form.name"
                   required
                   :class="[
                     'w-full px-4 py-3 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:border-transparent transition-colors',
-                    isFieldValid('name')
-                      ? 'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500'
-                      : 'border border-red-500 focus:ring-red-500',
+                    'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500',
                   ]"
                   placeholder="Your full name"
                 />
@@ -229,13 +226,12 @@
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   v-model="form.email"
                   required
                   :class="[
                     'w-full px-4 py-3 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:border-transparent transition-colors',
-                    isFieldValid('email')
-                      ? 'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500'
-                      : 'border border-red-500 focus:ring-red-500',
+                    'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500',
                   ]"
                   placeholder="your.email@example.com"
                 />
@@ -248,13 +244,12 @@
                 >
                 <select
                   id="subject"
+                  name="subject"
                   v-model="form.subject"
                   required
                   :class="[
                     'w-full px-4 py-3 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:border-transparent transition-colors',
-                    isFieldValid('subject')
-                      ? 'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500'
-                      : 'border border-red-500 focus:ring-red-500',
+                    'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500',
                   ]"
                 >
                   <option value="">Select a subject</option>
@@ -273,14 +268,13 @@
                 >
                 <textarea
                   id="message"
+                  name="message"
                   v-model="form.message"
                   rows="5"
                   required
                   :class="[
                     'w-full px-4 py-3 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:border-transparent transition-colors resize-vertical',
-                    isFieldValid('message')
-                      ? 'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500'
-                      : 'border border-red-500 focus:ring-red-500',
+                    'border border-gray-300 dark:border-gray-600 focus:ring-indigo-500',
                   ]"
                   placeholder="Tell me about your project or opportunity..."
                 ></textarea>
@@ -363,42 +357,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Dark Mode Toggle (Optional) -->
-    <button
-      @click="toggleDarkMode"
-      class="fixed bottom-6 right-6 w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg transition-colors duration-200 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-      aria-label="Toggle dark mode"
-    >
-      <svg
-        v-if="!isDarkMode"
-        class="w-6 h-6 mx-auto"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-        ></path>
-      </svg>
-      <svg
-        v-else
-        class="w-6 h-6 mx-auto"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-        ></path>
-      </svg>
-    </button>
   </div>
 </template>
 
@@ -417,33 +375,11 @@ export default {
       // UI state
       isSubmitting: false,
       showSuccessMessage: false,
-      isDarkMode: false,
       fieldErrors: {},
+      touchedFields: {},
     };
   },
-  mounted() {
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem("theme") || "light";
-    this.isDarkMode = currentTheme === "dark";
-
-    if (this.isDarkMode) {
-      document.documentElement.classList.add("dark");
-    }
-  },
   methods: {
-    // Dark mode toggle
-    toggleDarkMode() {
-      this.isDarkMode = !this.isDarkMode;
-
-      if (this.isDarkMode) {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
-    },
-
     // Form validation
     isFieldValid(fieldName) {
       return !this.fieldErrors[fieldName] && this.form[fieldName];
@@ -452,26 +388,42 @@ export default {
     // Form submission
     async submitForm() {
       this.isSubmitting = true;
-
+      this.showSuccessMessage = false;
+      this.fieldErrors = {};
       try {
-        // Simulate form submission (replace with actual form handling)
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Build FormData for Formspree
+        const formData = new FormData();
+        formData.append("name", this.form.name);
+        formData.append("email", this.form.email);
+        formData.append("subject", this.form.subject);
+        formData.append("message", this.form.message);
 
-        // Show success message
-        this.showSuccessMessage = true;
-
-        // Reset form
-        Object.keys(this.form).forEach((key) => {
-          this.form[key] = "";
+        // Send to Formspree endpoint
+        const response = await fetch("https://formspree.io/f/mblonnrd", {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
         });
 
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          this.showSuccessMessage = false;
-        }, 5000);
-
-        // In a real application, you would send this data to your server
-        console.log("Form submitted:", { ...this.form });
+        if (response.ok) {
+          this.showSuccessMessage = true;
+          Object.keys(this.form).forEach((key) => {
+            this.form[key] = "";
+          });
+          setTimeout(() => {
+            this.showSuccessMessage = false;
+          }, 5000);
+        } else {
+          const data = await response.json();
+          if (data.errors) {
+            data.errors.forEach((err) => {
+              this.fieldErrors[err.field] = err.message;
+            });
+          }
+          throw new Error("Form submission failed");
+        }
       } catch (error) {
         console.error("Form submission error:", error);
       } finally {
