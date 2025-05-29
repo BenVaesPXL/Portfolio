@@ -11,14 +11,9 @@ export const useProjectsStore = defineStore("projects", {
         id: 1,
         title: "Paddock Gear",
         description:
-          "A motorsport-themed e-commerce platform built with Vue.js, featuring responsive design and modern UI components.",
+          "A motorsport-themed e-commerce platform built with Vue.js.",
         image: paddockGearImage,
-        technologies: [
-          "Vue.js",
-          "JavaScript",
-          "Tailwind CSS",
-          "Responsive Design",
-        ],
+        technologies: ["Vue.js", "Bootstrap", "SCSS"],
         link: "/projects/1",
         githubUrl: "", // Add if available
         liveUrl: "", // Add if available
@@ -34,7 +29,7 @@ export const useProjectsStore = defineStore("projects", {
         id: 2,
         title: "Etaalent",
         description:
-          "Large-scale team project for cross-disciplinary course. Responsible for frontend development using Vue.js, SCSS, and Bootstrap.",
+          "Large-scale team project. Responsible for frontend development using Vue.js, SCSS, and Bootstrap.",
         image: etaalentImage,
         technologies: ["Vue.js", "SCSS", "Bootstrap", "Team Collaboration"],
         link: "/projects/2",
@@ -42,11 +37,11 @@ export const useProjectsStore = defineStore("projects", {
         liveUrl: "", // Add if available
         featured: true,
         category: "Team Project",
-        completedDate: "2024",
+        completedDate: "May 2025",
         challenges:
-          "Coordinating frontend development in a large cross-disciplinary team",
+          "Collaborating effectively with multidisciplinary teams, including Design and Backend Development, to ensure seamless integration and communication.",
         solutions:
-          "Used Vue.js with SCSS and Bootstrap for consistent styling and component architecture",
+          "Established clear communication channels, used Git for version control, and implemented reusable Vue components to streamline development and integration.",
       },
       {
         id: 3,
@@ -60,7 +55,7 @@ export const useProjectsStore = defineStore("projects", {
         liveUrl: "", // Add if available
         featured: true,
         category: "Portfolio",
-        completedDate: "2023",
+        completedDate: "2024",
         challenges:
           "Learning fundamental web technologies and creating a professional portfolio",
         solutions:

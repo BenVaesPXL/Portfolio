@@ -108,7 +108,7 @@
 import ProjectCard from "@/components/ProjectCard.vue";
 import CategoryFilter from "@/components/CategoryFilter.vue";
 import { useProjectsStore } from "@/stores/projects.js";
-import { mapState, mapGetters } from "pinia";
+import { mapStores } from "pinia";
 
 export default {
   name: "ProjectsView",
@@ -122,25 +122,21 @@ export default {
     };
   },
   computed: {
-    ...mapState(useProjectsStore, {
-      allProjects: "projects",
-    }),
-    ...mapGetters(useProjectsStore, [
-      "allCategories",
-      "allTechnologies",
-      "projectCount",
-    ]),
+    ...mapStores(useProjectsStore),
     categories() {
-      return this.allCategories;
+      return this.projectsStore.allCategories;
     },
     technologies() {
-      return this.allTechnologies;
+      return this.projectsStore.allTechnologies;
+    },
+    projectCount() {
+      return this.projectsStore.projectCount;
     },
     filteredProjects() {
       if (this.selectedCategory === "all") {
-        return this.allProjects;
+        return this.projectsStore.projects;
       }
-      return this.allProjects.filter(
+      return this.projectsStore.projects.filter(
         (project) => project.category === this.selectedCategory
       );
     },
