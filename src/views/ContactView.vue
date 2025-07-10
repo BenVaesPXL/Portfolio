@@ -38,7 +38,9 @@
                   >
                 </div>
                 <p class="text-green-600 dark:text-green-300 text-sm mt-1">
-                  Currently seeking internships and junior frontend positions
+                  Currently seeking internships (available from 19 November 2025
+                  <br />
+                  to 29 May 2026)
                 </p>
               </div>
             </div>

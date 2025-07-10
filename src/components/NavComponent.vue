@@ -120,7 +120,6 @@ export default {
       navItems: [
         { name: "About", path: "/about" },
         { name: "Projects", path: "/projects" },
-        { name: "WPL1", path: "/wpl1" },
         { name: "WPL2 Case", path: "/wpl2" },
         { name: "Contact", path: "/contact" },
       ],
