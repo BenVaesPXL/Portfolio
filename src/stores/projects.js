@@ -18,7 +18,7 @@ export const useProjectsStore = defineStore("projects", {
         link: "/projects/1",
         githubUrl: "", // Add if available
         liveUrl: "", // Add if available
-        featured: true,
+        status: "School",
         category: "E-commerce",
         completedDate: "2024",
       },
@@ -26,13 +26,13 @@ export const useProjectsStore = defineStore("projects", {
         id: 2,
         title: "Etaalent",
         description:
-          "Large-scale team project. Responsible for frontend development using Vue.js, SCSS, and Bootstrap.",
+          "Large-scale team project. Responsible for frontend development using Vue.js, SCSS, and Bootstrap. Check the WPL2 case study for more details.",
         image: etaalentImage,
         technologies: ["Vue.js", "SCSS", "Bootstrap", "Team Collaboration"],
         link: "/projects/2",
         githubUrl: "", // Add if available
         liveUrl: "", // Add if available
-        featured: true,
+        status: "School",
         category: "Team Project",
         completedDate: "May 2025",
       },
@@ -46,7 +46,7 @@ export const useProjectsStore = defineStore("projects", {
         link: "/projects/3",
         githubUrl: "", // Add if available
         liveUrl: "https://portfoliobenvaes.netlify.app/", // Add if available
-        featured: true,
+        status: "School",
         category: "Portfolio",
         completedDate: "2024",
       },
