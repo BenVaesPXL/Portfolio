@@ -115,10 +115,16 @@
             Status
           </h3>
           <span
-            :class="project.featured ? 'text-green-600' : 'text-gray-600'"
-            class="font-medium"
+            class="font-medium flex items-center gap-2"
+            :class="{
+              'text-green-600': project.status === 'Completed',
+              'text-yellow-600': project.status === 'In Development',
+              'text-gray-600': project.status === 'Prototype',
+              'text-blue-600': project.status === 'School',
+            }"
           >
-            {{ project.featured ? "Featured Project" : "Portfolio Project" }}
+            <span v-if="project.status === 'School'">🔒</span>
+            {{ project.status }}
           </span>
         </div>
       </div>
