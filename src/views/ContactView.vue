@@ -26,6 +26,8 @@
           <div class="space-y-8">
 
 
+            <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+
             <!-- Contact Methods -->
             <div class="space-y-6">
               <!-- Email -->
