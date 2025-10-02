@@ -24,26 +24,7 @@
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Contact Info -->
           <div class="space-y-8">
-            <div>
-              <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
-              <div
-                class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4"
-              >
-                <div class="flex items-center">
-                  <div
-                    class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"
-                  ></div>
-                  <span class="text-green-700 dark:text-green-400 font-medium"
-                    >Available for opportunities</span
-                  >
-                </div>
-                <p class="text-green-600 dark:text-green-300 text-sm mt-1">
-                  Currently seeking internships (available from 19 November 2025
-                  <br />
-                  to 29 May 2026)
-                </p>
-              </div>
-            </div>
+
 
             <!-- Contact Methods -->
             <div class="space-y-6">
